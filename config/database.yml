@@ -50,6 +50,4 @@ test:
 #
 production:
   <<: *default
-  database: okonomiyakidb_production
-  username: okonomiyakidb
-  password: <%= ENV['OKONOMIYAKIDB_DATABASE_PASSWORD'] %>
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
