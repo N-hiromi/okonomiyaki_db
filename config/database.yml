@@ -51,3 +51,5 @@ test:
 production:
   <<: *default
   url: <%= ENV.fetch('JAWSDB_URL') %>
+  database: okonomiyakidb_production
+  
