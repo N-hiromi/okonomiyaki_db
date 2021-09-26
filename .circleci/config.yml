@@ -22,6 +22,7 @@ executors:
         environment:
           BUNDLE_PATH: vendor/bundle
           RAILS_ENV: test
+          BUNDLER_VERSION: 2.2.22
 
 jobs:
   build:
