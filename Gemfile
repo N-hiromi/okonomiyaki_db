@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rubocop-airbnb'
   gem 'capybara'
   gem 'rails-controller-testing'
+  gem 'rspec_junit_formatter'
 end
 
 group :development do
