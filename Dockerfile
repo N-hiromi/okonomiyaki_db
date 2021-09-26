@@ -10,6 +10,7 @@ RUN mkdir /okonomiyakidb
 WORKDIR /okonomiyakidb
 COPY Gemfile /okonomiyakidb/Gemfile
 COPY Gemfile.lock /okonomiyakidb/Gemfile.lock
+RUN gem install bundler
 RUN bundle install
 RUN rails webpacker:install
 COPY . /okonomikakidb
