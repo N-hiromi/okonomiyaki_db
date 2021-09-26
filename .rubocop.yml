@@ -8,6 +8,7 @@ LineLength:
   Max: 130
 
 AllCops:
+  NewCops: enable
   Exclude:
     - 'db/**/*'
     - 'bin/*'
@@ -19,4 +20,5 @@ AllCops:
     - 'lib/tasks/*'
     - 'vendor/**/*'
     - 'Gemfile'
+    - 'spec/*'
     
