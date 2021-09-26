@@ -67,6 +67,10 @@ jobs:
 commands:
   bundle-install:
     steps:
+      - run:
+          name: bundler install
+          command: |
+            gem install bundler
       - ruby-orbs/bundle-install:
           bundle_clean: true
           bundle_extra_args: ''
