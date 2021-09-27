@@ -35,3 +35,5 @@
 yarn-debug.log*
 .yarn-integrity
 .env
+/app/assets/stylesheets/*.css
+/app/assets/stylesheets/*.css.map
