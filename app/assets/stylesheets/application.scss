@@ -1,6 +1,21 @@
-
-.sidebar .navbar {
-  margin-top:5%;
-  max-width: 15%; /* 好きな値を設定してください。 */
-  height:100%;
+.sidebar_main{
+  display:flex;
+  height: 100vh;
+  .sidebar{
+    width: 15%;
+  }
+  //flex-wrap:wrap;
+  .sidebar .navbar {
+    display: block;
+    .nav_menu{
+      margin: 50% 10%;
+    }
+  }
+  main{
+    width: 85%;
+    float: right;
+    .right_main_container{
+      margin-top:10%;
+    }
+  }
 }

@@ -78,7 +78,7 @@ commands:
           bundle_jobs: 4
           bundle_path: vendor/bundle
           bundle_retry: 3
-          cache_key_prefix: v1-bundle-dependencies
+          cache_key_prefix: v1-bundle-dependencies-{{ checksum "Gemfile.lock" }}
           restore_bundled_with: true
   preparate:
     steps:
