@@ -70,7 +70,8 @@ commands:
       - run:
           name: bundler install
           command: |
-            gem install bundler
+            gem update --system
+            gem install bundler -v 2.2.22
       - ruby-orbs/bundle-install:
           bundle_clean: true
           bundle_extra_args: ''
