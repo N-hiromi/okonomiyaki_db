@@ -1,0 +1,2 @@
+class UserPostId < ApplicationRecord
+end

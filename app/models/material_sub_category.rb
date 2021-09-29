@@ -1,0 +1,2 @@
+class MaterialSubCategory < ApplicationRecord
+end

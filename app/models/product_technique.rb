@@ -1,0 +1,2 @@
+class ProductTechnique < ApplicationRecord
+end
