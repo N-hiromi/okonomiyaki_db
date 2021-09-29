@@ -41,6 +41,27 @@ jobs:
     executor: default
     steps:
       - preparate
+      - run:
+          name: install docker-compose
+          command: |
+            curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-<code>uname -s</code>-<code>uname -m</code> &#062; ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
+      - run:
+          name: docker-compose up
+          command: |
+            set -x
+            docker-compose up --build -d
+      - run:
+          name: docker-compose stop
+          command: |
+            set -x
+            docker-compose stop
+      - run:
+          name: docker-compose up
+          command: |
+            set -x
+            docker-compose up -d
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       - run:
