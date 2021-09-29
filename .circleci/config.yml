@@ -18,7 +18,7 @@ executors:
   default:
     working_directory: ~/okonomiyakidb
     docker:
-      - image: ruby:3.0.2-stretch
+      - image: ruby:3.0.2-node
         environment:
           BUNDLE_PATH: vendor/bundle
           RAILS_ENV: test
