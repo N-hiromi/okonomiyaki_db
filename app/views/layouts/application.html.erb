@@ -61,6 +61,43 @@
                   <li><%= link_to "Discuss", discuss_path, class:"dropdown-item discuss_icon icon" %></li>
                 </ul>
               </li>
+              <li class="nav-item dropend">
+                <a class="nav-link dropdown-toggle product_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Product
+                </a>
+                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
+                  <li><%= link_to "製品検索", products_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "製品登録", products_new_path, class:"dropdown-item material_icon icon" %></li>
+                </ul>
+              </li>
+              <li class="nav-item dropend">
+                <a class="nav-link dropdown-toggle material_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Material
+                </a>
+                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
+                  <li><%= link_to "材料検索", materials_path, class:"dropdown-item" %></li>
+                  <li><%= link_to "材料登録", materials_new_path, class:"dropdown-item material_icon icon" %></li>
+                </ul>
+              </li>
+              <li class="nav-item dropend">
+                <a class="nav-link dropdown-toggle technique_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Technique
+                </a>
+                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
+                  <li><%= link_to "工法検索", technique_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "工法登録", technique_new_path, class:"dropdown-item material_icon icon" %></li>
+                </ul>
+              </li>
+              <li class="nav-item dropend">
+                <a class="nav-link dropdown-toggle discuss_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Discuss
+                </a>
+                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
+                  <li><%= link_to "相談・質問投稿", discuss_new_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "相談・質問検索", discuss_path, class:"dropdown-item material_icon icon" %></li>
+                  <li><%= link_to "社員検索", employees_path, class:"dropdown-item material_icon icon" %></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </nav>
