@@ -64,11 +64,9 @@ jobs:
           command: |
             set -x
             docker-compose up -d
-      - run: docker-compose exec web bash -c "bundle exec rails db:create"
-      - run: docker-compose exec web bash -c "bundle exec rails db:schema:load"
-      - run:
-          name: Rspec
-          command: bundle exec rspec
+            docker-compose exec web bash -c "bundle exec rails db:create"
+            docker-compose exec web bash -c "bundle exec rails db:schema:load"
+            docker-compose exec web bash -c "bundle exec rspec"
   heroku_deploy:
     executor: heroku/default
     parameters:
