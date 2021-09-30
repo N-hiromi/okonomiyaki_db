@@ -1,2 +1,0 @@
-class OtherMaterial < ApplicationRecord
-end

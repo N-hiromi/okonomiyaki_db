@@ -1,2 +1,0 @@
-class ProductPerformance < ApplicationRecord
-end

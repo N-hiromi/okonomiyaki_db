@@ -1,2 +1,0 @@
-class Powder < ApplicationRecord
-end

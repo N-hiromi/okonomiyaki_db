@@ -1,2 +1,0 @@
-class ProductMaterial < ApplicationRecord
-end
