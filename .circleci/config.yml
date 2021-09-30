@@ -44,7 +44,7 @@ jobs:
       - run:
           name: docker start
           command: |
-            sudo systemctl start docker
+            setup_remote_docker
       - run:
           name: install docker-compose
           command: |
