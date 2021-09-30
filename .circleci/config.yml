@@ -51,17 +51,17 @@ jobs:
           name: docker-compose up
           command: |
             set -x
-            docker-compose up --build -d
+            sudo docker-compose up --build -d
       - run:
           name: docker-compose stop
           command: |
             set -x
-            docker-compose stop
+            sudo docker-compose stop
       - run:
           name: docker-compose up
           command: |
             set -x
-            docker-compose up -d
+            sudo docker-compose up -d
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       - run:
