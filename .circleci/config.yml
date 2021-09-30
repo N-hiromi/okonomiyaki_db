@@ -64,8 +64,8 @@ jobs:
           command: |
             set -x
             docker-compose up -d
-      - run: bundle exec rails db:create
-      - run: bundle exec rails db:schema:load
+      - run: docker-compose exec web bash -c "bundle exec rails db:create"
+      - run: docker-compose exec web bash -c "bundle exec rails db:schema:load"
       - run:
           name: Rspec
           command: bundle exec rspec
@@ -73,12 +73,12 @@ jobs:
     executor: heroku/default
     parameters:
       app-name: 
-        default: $HEROKU_APP_NAME_PRD
+        default: $HEROKU_APP_NAME
         type: string
       post-deploy:
         default:
           - run:
-              command: heroku run rails db:migrate --app $HEROKU_APP_NAME_PRD
+              command: heroku run rails db:migrate --app $HEROKU_APP_NAME
         type: steps
     steps:
       - checkout
