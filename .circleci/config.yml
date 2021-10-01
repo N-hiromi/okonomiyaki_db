@@ -64,6 +64,7 @@ jobs:
           command: |
             set -x
             docker-compose up -d
+            docker-compose ps
             docker-compose exec web bash -c "bundle exec rails db:create"
             docker-compose exec web bash -c "bundle exec rails db:schema:load"
             docker-compose exec web bash -c "bundle exec rspec"
