@@ -4,12 +4,14 @@ User.create!(
     {
       email: 'test1',
       name: 'テスト1',
+      password: 'test1',
       department: '基盤技術開発部',
       section: '工法Gr'
     },
     {
       email: 'test2',
       name: 'テスト2',
+      password: 'test2',
       department: '基盤技術開発部',
       section: '材料開発室'
     }
@@ -24,7 +26,7 @@ User.all.each do |user|
     productMaterial_id: '1',
     productPerformance_id: '1'
   )
-  user.bake.create!(
+  user.bakes.create!(
     name: '軽く焼く',
     tool: 'フライパン',
     cost: '100',
@@ -33,16 +35,16 @@ User.all.each do |user|
     temp: '100',
     time: '1'
   )
-  user.cut.create!(
+  user.cuts.create!(
     name: 'みじん切り',
     tool: 'すごい包丁',
     cost: '30',
-    descrption: '細かく切る',
+    description: '細かく切る',
     warning: '手を切らないように',
     width: '0.5',
     height: '0.5'
   )
-  user.otherTechnique.create!(
+  user.otherTechniques.create!(
     name: 'お湯で洗う',
     tool: 'やかん',
     cost: '10',
@@ -50,7 +52,7 @@ User.all.each do |user|
     warning: '火傷しないでね',
     time: '0.25'
   )
-  user.powder.create!(
+  user.powders.create!(
     name: '薄力粉',
     cost: '3',
     description: 'ケーキ作りに向いてる粒径が細かいサラサラな小麦粉。タンパク質は少ない。',
@@ -59,7 +61,7 @@ User.all.each do |user|
     density: '1',
     ssa: '100'
   )
-  user.liquid.create!(
+  user.liquids.create!(
     name: '牛乳',
     cost: '1',
     description: '10',
@@ -67,10 +69,14 @@ User.all.each do |user|
     viscosity: '3',
     density: '1'
   )
-  user.seasoning.create!(
+  user.seasonings.create!(
     name: '塩',
     cost: '1',
     description: '必需品。入れすぎるとしょっぱい。',
     warning: 'とりすぎ注意'
+  )
+  user.images.create!(
+    name: user1_icon
+    image: File.open('./app/assets/images/test.jpg')
   )
 end

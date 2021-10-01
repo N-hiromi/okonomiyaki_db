@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.text "warning"
     t.float "temp"
     t.float "time"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.text "warning"
     t.float "width"
     t.float "height"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.float "viscosity"
     t.float "density"
     t.integer "materialCategory_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -86,6 +89,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.text "description"
     t.text "warning"
     t.integer "materialCategoty_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -97,6 +101,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.text "description"
     t.text "warning"
     t.float "time"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -109,6 +114,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.float "particle_size"
     t.float "density"
     t.float "ssa"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -154,6 +160,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.integer "productPerformance_id"
     t.integer "measurementCondition_id"
     t.integer "productMaterial_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -165,6 +172,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_022820) do
     t.text "description"
     t.text "warning"
     t.integer "materialCategory_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

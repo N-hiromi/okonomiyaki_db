@@ -1,0 +1,2 @@
+class TechniqueCategory < ApplicationRecord
+end

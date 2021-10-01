@@ -8,7 +8,7 @@ class CreateCuts < ActiveRecord::Migration[6.1]
       t.text :warning
       t.float :width
       t.float :height
-
+      t.integer :user_id
       t.timestamps
     end
   end

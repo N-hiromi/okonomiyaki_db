@@ -8,6 +8,7 @@ class CreatePowders < ActiveRecord::Migration[6.1]
       t.float :particle_size
       t.float :density
       t.float :ssa
+      t.integer :user_id
       t.timestamps
     end
   end

@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :otherTechniques
   has_many :discusses
   has_many :comments
+  has_many :images, as: :imageable 
 end

@@ -8,7 +8,7 @@ class CreateBakes < ActiveRecord::Migration[6.1]
       t.text :warning
       t.float :temp
       t.float :time
-
+      t.integer :user_id
       t.timestamps
     end
   end
