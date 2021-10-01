@@ -5,7 +5,7 @@ class CreateProductPerformances < ActiveRecord::Migration[6.1]
       t.float :smell
       t.float :taste
       t.float :juicy
-      t.juicy :app
+      t.float :app
 
       t.timestamps
     end

@@ -3,7 +3,7 @@ class CreateCuts < ActiveRecord::Migration[6.1]
     create_table :cuts do |t|
       t.string :name
       t.string :tool
-      t.integrate :cost
+      t.float :cost
       t.text :description
       t.text :warning
       t.float :width

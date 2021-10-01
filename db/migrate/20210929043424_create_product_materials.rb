@@ -1,11 +1,11 @@
 class CreateProductMaterials < ActiveRecord::Migration[6.1]
   def change
     create_table :product_materials do |t|
-      t.integrate :product_id
-      t.integrate :powder_id
-      t.integrate :liquid_id
-      t.integrate :seasoning_id
-      t.integrate :otherMaterial_id
+      t.integer :product_id
+      t.integer :powder_id
+      t.integer :liquid_id
+      t.integer :seasoning_id
+      t.integer :otherMaterial_id
       t.float :powder_weight
       t.float :liquid_weight
       t.float :seasoning_weight

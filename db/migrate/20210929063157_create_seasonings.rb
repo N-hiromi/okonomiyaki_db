@@ -3,10 +3,10 @@ class CreateSeasonings < ActiveRecord::Migration[6.1]
     create_table :seasonings do |t|
       t.string :name
       t.string :tool
-      t.integrate :cost
+      t.float :cost
       t.text :description
       t.text :warning
-      t.integrate :materialCategory_id
+      t.integer :materialCategory_id
 
       t.timestamps
     end

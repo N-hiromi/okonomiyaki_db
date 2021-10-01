@@ -1,2 +1,0 @@
-class UserPostId < ApplicationRecord
-end
