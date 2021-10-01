@@ -65,6 +65,7 @@ jobs:
             set -x
             docker-compose up -d
             docker-compose ps
+            docker-compose logs -f $okonomiyakidb_web_1
             docker-compose exec web bash -c "bundle exec rails db:create"
             docker-compose exec web bash -c "bundle exec rails db:schema:load"
             docker-compose exec web bash -c "bundle exec rspec"
