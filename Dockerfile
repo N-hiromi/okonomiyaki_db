@@ -8,6 +8,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 apt-get install -y nodejs
 RUN mkdir /okonomiyakidb
 WORKDIR /okonomiyakidb
+COPY ./ /okonomiyakidb/
 COPY Gemfile /okonomiyakidb/Gemfile
 COPY Gemfile.lock /okonomiyakidb/Gemfile.lock
 RUN gem install bundler
