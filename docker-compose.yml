@@ -8,8 +8,8 @@ services:
     image: "mysql"
     ports:
       - "3307:3306"
-    volumes:
-      - "mysql_data:/var/lib/mysql"
+    # volumes:
+    #   - "mysql_data:/var/lib/mysql"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_ROOT_PASSWORD:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
-    volumes:
-      - .:/okonomiyakidb
+    # volumes:
+    #   - .:/okonomiyakidb
     ports:
       -  "3000:3000"
