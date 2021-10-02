@@ -9,6 +9,7 @@ class CreateCuts < ActiveRecord::Migration[6.1]
       t.float :width
       t.float :height
       t.integer :user_id
+      t.integer :techniqueCategory_id
       t.timestamps
     end
   end

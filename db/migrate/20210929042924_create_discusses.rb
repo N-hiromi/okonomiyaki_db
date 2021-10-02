@@ -4,7 +4,7 @@ class CreateDiscusses < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :text
       t.string :tag
-
+      
       t.timestamps
     end
   end

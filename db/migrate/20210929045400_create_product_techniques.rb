@@ -5,6 +5,7 @@ class CreateProductTechniques < ActiveRecord::Migration[6.1]
       t.integer :bake_id
       t.integer :cut_id
       t.integer :otherMethod_id
+      
       t.timestamps
     end
   end

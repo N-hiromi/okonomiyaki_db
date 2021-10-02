@@ -8,6 +8,7 @@ class CreateOtherTechniques < ActiveRecord::Migration[6.1]
       t.text :warning
       t.float :time
       t.integer :user_id
+      t.integer :techniqueCategory_id
       t.timestamps
     end
   end

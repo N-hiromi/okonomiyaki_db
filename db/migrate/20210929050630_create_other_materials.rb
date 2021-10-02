@@ -5,8 +5,9 @@ class CreateOtherMaterials < ActiveRecord::Migration[6.1]
       t.float :cost
       t.text :description
       t.text :warning
-      t.integer :materialCategoty_id
+      t.integer :materialCategory_id
       t.integer :user_id
+
       t.timestamps
     end
   end

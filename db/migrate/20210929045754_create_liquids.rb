@@ -9,6 +9,7 @@ class CreateLiquids < ActiveRecord::Migration[6.1]
       t.float :density
       t.integer :materialCategory_id
       t.integer :user_id
+      
       t.timestamps
     end
   end
