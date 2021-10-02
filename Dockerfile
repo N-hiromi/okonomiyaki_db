@@ -9,12 +9,11 @@ apt-get install -y nodejs
 RUN mkdir /okonomiyakidb
 WORKDIR /okonomiyakidb
 COPY ./ /okonomiyakidb/
-COPY Gemfile /okonomiyakidb/Gemfile
-COPY Gemfile.lock /okonomiyakidb/Gemfile.lock
+
 RUN gem install bundler
 RUN bundle install
 RUN rails webpacker:install
-COPY . /okonomikakidb
+
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
