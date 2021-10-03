@@ -50,10 +50,10 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
-          name: docker-compose up
+          name: docker-compose up　
           command: |
             set -x
-            docker-compose up --build -d
+            docker-compose.exe -f docker-compose.circleci.yml up --build -d
       - run:
           name: docker-compose stop
           command: |
@@ -64,7 +64,7 @@ jobs:
           command: |
             set -x
             printenv
-            docker-compose up -d
+            docker-compose.exe -f docker-compose.circleci.yml up -d
             docker-compose ps
             printenv
             docker-compose exec web bash -c "bundle exec rails db:create"
