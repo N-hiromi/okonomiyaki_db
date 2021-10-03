@@ -11,9 +11,9 @@ services:
     # volumes:
     #   - "mysql_data:/var/lib/mysql"
     environment:
-      - DB_HOST= $DB_HOST
-      - DB_ROOT_PASSWORD= $DB_ROOT_PASSWORD
-      - DB_USERNAME= $DB_USERNAME
+      - DB_HOST=$DB_HOST
+      - DB_ROOT_PASSWORD=$DB_ROOT_PASSWORD
+      - DB_USERNAME=$DB_USERNAME
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: okonomiyaki_db
