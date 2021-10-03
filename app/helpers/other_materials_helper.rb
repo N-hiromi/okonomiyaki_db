@@ -1,0 +1,2 @@
+module OtherMaterialsHelper
+end
