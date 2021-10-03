@@ -6,20 +6,20 @@ Rails.application.routes.draw do
       resources :comments
       resources :discusses
       resources :products, shallow: true do
-        resources :productMaterials
-        resources :productTechniques
-        resources :productPerformances
+        resources :product_materials
+        resources :product_techniques
+        resources :product_performances
       end
-      resources :techniqueCategories do
+      resources :technique_categories do
         resources :bakes
         resources :cuts
-        resources :otherTechniques
+        resources :other_techniques
       end
-      resources :materialCategories do
+      resources :material_categories do
         resources :powders
         resources :liquids
         resources :seasonings
-        resources :otherMaterials
+        resources :other_materials
       end
     end
   end
