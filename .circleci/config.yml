@@ -55,10 +55,10 @@ jobs:
             printenv
             docker-compose -f docker-compose.circleci.yml up --build -d
             docker-compose ps
-            docker-compose exec web bash -c "printenv"
-            docker-compose exec web bash -c "bundle exec rails db:create"
-            docker-compose exec web bash -c "bundle exec rails db:schema:load"
-            docker-compose exec web bash -c "bundle exec rspec"
+            docker-compose -f docker-compose.circleci.yml exec web bash -c "printenv"
+            docker-compose -f docker-compose.circleci.yml exec web bash -c "bundle exec rails db:create"
+            docker-compose -f docker-compose.circleci.yml exec web bash -c "bundle exec rails db:schema:load"
+            docker-compose -f docker-compose.circleci.yml exec web bash -c "bundle exec rspec"
   heroku_deploy:
     executor: heroku/default
     parameters:
