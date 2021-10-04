@@ -4,7 +4,6 @@ orbs:
   heroku: circleci/heroku@1.0.1
 
 workflows:
-  version: 2.1
   build:
     jobs:
       - rspec
@@ -50,30 +49,20 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
-          name: docker-compose up　
-          command: |
-            set -x
-            docker-compose -f docker-compose.circleci.yml up --build -d
-      - run:
-          name: docker-compose stop
-          command: |
-            set -x
-            docker-compose stop
-      - run:
           name: docker-compose up
           command: |
             set -x
             printenv
-            docker-compose -f docker-compose.circleci.yml up -d
+            docker-compose -f docker-compose.circleci.yml up --build -d
             docker-compose ps
-            printenv
+            docker-compose exec web bash -c "printenv"
             docker-compose exec web bash -c "bundle exec rails db:create"
             docker-compose exec web bash -c "bundle exec rails db:schema:load"
             docker-compose exec web bash -c "bundle exec rspec"
   heroku_deploy:
     executor: heroku/default
     parameters:
-      app-name: 
+      app-name:
         default: $HEROKU_APP_NAME
         type: string
       post-deploy:
