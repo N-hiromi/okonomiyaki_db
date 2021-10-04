@@ -2,16 +2,16 @@
 User.create!(
   [
     {
-      email: 'test1',
+      email: 'test1email@com',
       name: 'テスト1',
-      password: 'test1',
+      password: 'test1pass',
       department: '基盤技術開発部',
       section: '工法Gr'
     },
     {
-      email: 'test2',
+      email: 'test2email@com',
       name: 'テスト2',
-      password: 'test2',
+      password: 'test2pass',
       department: '基盤技術開発部',
       section: '材料開発室'
     }
