@@ -53,20 +53,8 @@ jobs:
           name: docker-compose up　
           command: |
             set -x
-            docker-compose -f docker-compose.circleci.yml up --build -d
-      - run:
-          name: docker-compose stop
-          command: |
-            set -x
-            docker-compose stop
-      - run:
-          name: docker-compose up
-          command: |
-            set -x
-            printenv
             docker-compose -f docker-compose.circleci.yml up -d
-            docker-compose ps
-            printenv
+            sleep 30
             docker-compose exec web bash -c "bundle exec rails db:create"
             docker-compose exec web bash -c "bundle exec rails db:schema:load"
             docker-compose exec web bash -c "bundle exec rspec"
