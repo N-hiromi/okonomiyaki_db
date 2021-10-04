@@ -49,11 +49,6 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
-          command: |
-            echo DB_HOST=${DB_HOST} >> ~/.env
-            echo DB_USERNAME=${DB_USERNAME} > ~/.env
-            echo DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD} > ~/.env
-      - run:
           name: docker-compose up
           command: |
             set -x
