@@ -10,12 +10,12 @@ Rails.application.routes.draw do
       resources :product_techniques
       resources :product_performances
     end
-    resources :technique_categories do
+    resources :technique_categories, shallow: true do
       resources :bakes
       resources :cuts
       resources :other_techniques
     end
-    resources :material_categories do
+    resources :material_categories, shallow: true do
       resources :powders
       resources :liquids
       resources :seasonings
