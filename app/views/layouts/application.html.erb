@@ -23,12 +23,12 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <img src="" alt="icon image">
-                <%= @current_user.name %>
+                <!--%= @current_user.name %-->
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "Profile", user_path, class:"dropdown-menu" %>
-                  <li><%= link_to "help", help_path, class:"dropdown-menu" %>
-                  <li><%= link_to "logout", logout_path, class:"dropdown-menu" %>
+                  <li><%= link_to "Profile", "", class:"dropdown-menu" %>
+                  <li><%= link_to "help", "", class:"dropdown-menu" %>
+                  <li><%= link_to "logout", "", class:"dropdown-menu" %>
                 </ul>
               </li>
               <li class="nav-item">
@@ -51,23 +51,12 @@
                 <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item dropend">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "Product", product_path, class:"dropdown-item product_icon icon" %></li>
-                  <li><%= link_to "Material", material_path, class:"dropdown-item material_icon icon" %></li>
-                  <li><%= link_to "Technique", technique_path, class:"dropdown-item technique_icon icon" %></li>
-                  <li><%= link_to "Discuss", discuss_path, class:"dropdown-item discuss_icon icon" %></li>
-                </ul>
-              </li>
-              <li class="nav-item dropend">
                 <a class="nav-link dropdown-toggle product_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Product
                 </a>
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "製品検索", products_path, class:"dropdown-item product_icon icon" %></li>
-                  <li><%= link_to "製品登録", products_new_path, class:"dropdown-item material_icon icon" %></li>
+                  <li><%= link_to "製品検索", search_product_search_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "製品登録", new_product_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
               <li class="nav-item dropend">
@@ -75,8 +64,8 @@
                   Material
                 </a>
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "材料検索", materials_path, class:"dropdown-item" %></li>
-                  <li><%= link_to "材料登録", materials_new_path, class:"dropdown-item material_icon icon" %></li>
+                  <li><%= link_to "材料検索", search_material_search_path, class:"dropdown-item" %></li>
+                  <li><%= link_to "材料登録", material_categories_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
               <li class="nav-item dropend">
@@ -84,8 +73,8 @@
                   Technique
                 </a>
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "工法検索", technique_path, class:"dropdown-item product_icon icon" %></li>
-                  <li><%= link_to "工法登録", technique_new_path, class:"dropdown-item material_icon icon" %></li>
+                  <li><%= link_to "工法検索", search_technique_search_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "工法登録", technique_categories_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
               <li class="nav-item dropend">
@@ -93,9 +82,9 @@
                   Discuss
                 </a>
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "相談・質問投稿", discuss_new_path, class:"dropdown-item product_icon icon" %></li>
-                  <li><%= link_to "相談・質問検索", discuss_path, class:"dropdown-item material_icon icon" %></li>
-                  <li><%= link_to "社員検索", employees_path, class:"dropdown-item material_icon icon" %></li>
+                  <li><%= link_to "相談・質問投稿", new_discuss_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "相談・質問検索", discusses_path, class:"dropdown-item material_icon icon" %></li>
+                  <li><%= link_to "社員検索", search_user_search_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
             </ul>

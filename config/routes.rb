@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   scope "/okonomiyakidb" do
     get "tops/help"
-    devise_for :users
+    get 'search/product_search'
+    get 'search/material_search'
+    get 'search/technique_search'
+    get 'search/user_search'
+    devise_for :users, controllers: {
+      registrations: 'users/registrations',
+      sessions: 'users/sessions',
+    }
+    root to: 'sessions#log_in'
     resources :tops, only: [:index]
     resources :comments
     resources :discusses
