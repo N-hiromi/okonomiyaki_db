@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
     }
     root to: 'sessions#log_in'
+    resources :accounts, only: [:show, :edit, :create, :destroy]
     resources :tops, only: [:index]
     resources :comments
     resources :discusses

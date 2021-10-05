@@ -22,17 +22,14 @@
             <ul class="navbar-nav .ml-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="" alt="icon image">
-                <!--%= @current_user.name %-->
+                  <img src="<%= current_user.image %>" alt="icon image">
+                <%= current_user.name %>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "Profile", "", class:"dropdown-menu" %>
-                  <li><%= link_to "help", "", class:"dropdown-menu" %>
-                  <li><%= link_to "logout", "", class:"dropdown-menu" %>
+                  <li><%= link_to "Profile", account_path(current_user.id), class:"dropdown-menu" %></li>
+                  <li><%= link_to "help", "", class:"dropdown-menu" %></li>
+                  <li><%= link_to "logout", destroy_user_session_path, class:"dropdown-menu" %></li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
           </div>
@@ -44,12 +41,6 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light h-100">
           <div class="container-fluid">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-column nav_menu">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
               <li class="nav-item dropend">
                 <a class="nav-link dropdown-toggle product_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Product
@@ -92,6 +83,10 @@
         </nav>
       </div>
       <main>
+        <div class="login_message">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          </div>
         <div class="container col-sm-10 right_main_container">
           <%= yield %>
         </div>

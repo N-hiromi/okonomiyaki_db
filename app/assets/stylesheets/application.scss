@@ -14,8 +14,17 @@
   main{
     width: 85%;
     float: right;
+    //application.html.erb適用時
     .right_main_container{
       margin-top:10%;
+    }
+    //no_bar.html.erb適用時
+    .login_message{
+      margin-top:8%;
+    }
+    .no_bar_main_container{
+      text-align: center;
+      margin-top: 15%;
     }
   }
 }
