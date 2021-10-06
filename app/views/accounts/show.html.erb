@@ -5,14 +5,14 @@
   <div class="container col-6">
     <div class="user">
       <dl>
-        <dt>名前</dt>
+        <dt><%= Constants::NAME %></dt>
         <dd><%= current_user.name %></dd>
-        <dt>email</dt>
+        <dt><%= Constants::EMAIL %></dt>
         <dd><%= current_user.email %></dd>
-        <dt>部署</dt>
+        <dt><%= Constants::DEPARTMENT %></dt>
         <dd><%= current_user.department %></dd>
-        <dt>課</dt>
-        <dd><%= current_user.section %></dd>
-      </dl>
+        <dt><%= Constants::PASSWORD %></dt>
+        <dd>非表示</dd>
+        <%= link_to "アカウント情報の変更", edit_user_registration_path %>
   </div>
 </div>
