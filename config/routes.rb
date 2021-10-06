@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   scope "/okonomiyakidb" do
     get "tops/help"
-    get 'search/product_search'
-    get 'search/material_search'
-    get 'search/technique_search'
-    get 'search/user_search'
+    get 'searches/product_search'
+    get 'searches/material_search'
+    get 'searches/technique_search'
+    get 'searches/user_search'
     devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions',

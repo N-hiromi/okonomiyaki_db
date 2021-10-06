@@ -1,2 +1,11 @@
 <h1>Search#product_search</h1>
 <p>Find me in app/views/search/product_search.html.erb</p>
+<div class="form">
+  <%= search_form_for @q, url: searches_product_search_path do |f| %>
+    <div class="area_search mb-4">
+      <p class="mb-0"><%= Constants::NAME %></p>
+      <%= f.search_field :name_cont , class: "form_width", placeholder: "お好み焼き" %>
+    </div>
+    <%= f.submit "検索", class: "btn btn-primary btn-block d-grid gap-2 form_width "%>
+  <% end %>
+</div>

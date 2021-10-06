@@ -47,7 +47,7 @@
                   Product
                 </a>
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "製品検索", search_product_search_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "製品検索", searches_product_search_path, class:"dropdown-item product_icon icon" %></li>
                   <li><%= link_to "製品登録", new_product_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
@@ -56,7 +56,7 @@
                   Material
                 </a>
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "材料検索", search_material_search_path, class:"dropdown-item" %></li>
+                  <li><%= link_to "材料検索", searches_material_search_path, class:"dropdown-item" %></li>
                   <li><%= link_to "材料登録", material_categories_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
@@ -65,7 +65,7 @@
                   Technique
                 </a>
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "工法検索", search_technique_search_path, class:"dropdown-item product_icon icon" %></li>
+                  <li><%= link_to "工法検索", searches_technique_search_path, class:"dropdown-item product_icon icon" %></li>
                   <li><%= link_to "工法登録", technique_categories_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
@@ -76,7 +76,7 @@
                 <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
                   <li><%= link_to "相談・質問投稿", new_discuss_path, class:"dropdown-item product_icon icon" %></li>
                   <li><%= link_to "相談・質問検索", discusses_path, class:"dropdown-item material_icon icon" %></li>
-                  <li><%= link_to "社員検索", search_user_search_path, class:"dropdown-item material_icon icon" %></li>
+                  <li><%= link_to "社員検索", searches_user_search_path, class:"dropdown-item material_icon icon" %></li>
                 </ul>
               </li>
             </ul>
