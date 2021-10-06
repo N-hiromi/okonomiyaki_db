@@ -5,15 +5,13 @@ User.create!(
       email: 'test1email@com',
       name: 'テスト1',
       password: 'test1pass',
-      department: '基盤技術開発部',
-      section: '工法Gr'
+      department: '経理部',
     },
     {
       email: 'test2email@com',
       name: 'テスト2',
       password: 'test2pass',
-      department: '基盤技術開発部',
-      section: '材料開発室'
+      department: '開発部',
     }
   ]
 )
@@ -32,9 +30,12 @@ User.all.each do |user|
     name: 'お好み焼き',
     price: '300',
     cost: '100',
+    smell: '30',
+    taste: '80',
+    juicy: '60',
+    app: '70',
     productTechnique_id: '1',
-    productMaterial_id: '1',
-    productPerformance_id: '1'
+    productMaterial_id: '1'
   )
   user.bakes.create!(
     name: '軽く焼く',
@@ -117,13 +118,6 @@ Product.all.each do |product|
     bake_id: '1',
     cut_id: '1',
     otherMethod_id: '1',
-  )
-  product.productPerformances.create(
-    product_id: '1',
-    smell: '30',
-    taste: '80',
-    juicy: '60',
-    app: '70'
   )
 end
 bake1 = Bake.find(1)

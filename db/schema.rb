@@ -181,10 +181,12 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.integer "price"
     t.float "cost"
     t.integer "productTechnique_id"
-    t.integer "productPerformance_id"
-    t.integer "measurementCondition_id"
     t.integer "productMaterial_id"
     t.integer "user_id"
+    t.integer "smell"
+    t.integer "taste"
+    t.integer "juicy"
+    t.integer "app"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -212,7 +214,6 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
     t.string "department", null: false
-    t.string "section"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

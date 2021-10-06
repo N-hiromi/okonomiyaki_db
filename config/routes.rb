@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     resources :products, shallow: true do
       resources :product_materials
       resources :product_techniques
-      resources :product_performances
     end
     resources :technique_categories, shallow: true do
       resources :bakes
