@@ -21,6 +21,27 @@
     <%= f.file_field:image, class: "form-control" %>
   </div>
 
+  <h3>性能</h3>
+
+  <div class="form-group">
+    <p>見た目</p>
+    <%= f.text_field :app, autofocus: true, class: "form-control" %>円
+  </div>
+
+  <div class="form-group">
+    <p>ジューシーさ</p>
+    <%= f.text_field :price, autofocus: true, class: "form-control" %>円
+  </div>
+
+  <div class="form-group">
+    <p>味</p>
+    <%= f.text_field :juicy, autofocus: true, class: "form-control" %>円
+  </div>
+
+  <div class="form-group">
+    <p>香り</p>
+    <%= f.text_field :price, autofocus: true, class: "form-control" %>円
+  </div>
   <div class="actions">
     <%= f.submit "次へ" %>
   </div>

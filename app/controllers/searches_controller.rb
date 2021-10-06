@@ -1,9 +1,9 @@
-class SearchController < ApplicationController
+class SearchesController < ApplicationController
   before_action :search
 
   def product_search
     @q = Product.ransack(params[:q])
-    @user = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def material_search
