@@ -1,2 +1,18 @@
 <h1>Accounts#show</h1>
 <p>Find me in app/views/accounts/show.html.erb</p>
+
+<div class="main user-show  users-right col-9">
+  <div class="container col-6">
+    <div class="user">
+      <dl>
+        <dt>名前</dt>
+        <dd><%= current_user.name %></dd>
+        <dt>email</dt>
+        <dd><%= current_user.email %></dd>
+        <dt>部署</dt>
+        <dd><%= current_user.department %></dd>
+        <dt>課</dt>
+        <dd><%= current_user.section %></dd>
+      </dl>
+  </div>
+</div>
