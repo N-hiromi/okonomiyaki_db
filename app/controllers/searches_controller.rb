@@ -1,5 +1,4 @@
 class SearchesController < ApplicationController
-  before_action :search
 
   def product_search
     @q = Product.ransack(params[:q])

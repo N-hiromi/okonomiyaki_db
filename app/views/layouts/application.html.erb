@@ -10,10 +10,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top top-nav">
         <div class="container-fluid">
           <%= link_to "Okonomiyakidb",tops_path, class:"navbar-brand" %>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,52 +36,49 @@
         </div>
       </nav>
     </header>
-    <div class="sidebar_main">
-      <div class="sidebar">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light h-100">
-          <div class="container-fluid">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-column nav_menu">
-              <li class="nav-item dropend">
-                <a class="nav-link dropdown-toggle product_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Product
-                </a>
-                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "製品検索", searches_product_search_path, class:"dropdown-item product_icon icon" %></li>
-                  <li><%= link_to "製品登録", new_product_path, class:"dropdown-item material_icon icon" %></li>
-                </ul>
-              </li>
-              <li class="nav-item dropend">
-                <a class="nav-link dropdown-toggle material_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Material
-                </a>
-                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "材料検索", searches_material_search_path, class:"dropdown-item" %></li>
-                  <li><%= link_to "材料登録", material_categories_path, class:"dropdown-item material_icon icon" %></li>
-                </ul>
-              </li>
-              <li class="nav-item dropend">
-                <a class="nav-link dropdown-toggle technique_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Technique
-                </a>
-                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "工法検索", searches_technique_search_path, class:"dropdown-item product_icon icon" %></li>
-                  <li><%= link_to "工法登録", technique_categories_path, class:"dropdown-item material_icon icon" %></li>
-                </ul>
-              </li>
-              <li class="nav-item dropend">
-                <a class="nav-link dropdown-toggle discuss_icon icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Discuss
-                </a>
-                <ul class="dropdown-menu dropdend" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "相談・質問投稿", new_discuss_path, class:"dropdown-item product_icon icon" %></li>
-                  <li><%= link_to "相談・質問検索", discusses_path, class:"dropdown-item material_icon icon" %></li>
-                  <li><%= link_to "社員検索", searches_user_search_path, class:"dropdown-item material_icon icon" %></li>
+    <div class="main_side_bar">
+      <nav class="side_bar">
+        <ul class="ddmenu">
+          <li><%=link_to "製品", "#" %>
+            <ul>
+              <li><%= link_to "検索", searches_product_search_path %></li>
+              <li><%= link_to "登録", new_product_path %></li>
+            </ul>
+          </li>
+          <li><%=link_to "材料", "#" %>
+            <ul>
+              <li><%= link_to "検索", searches_material_search_path %></li>
+              <li><%= link_to "登録  >>", "#" %> 
+                <ul>
+                  <li><%= link_to "粉末", new_material_category_powder_path(:material_category_id) %></li>
+                  <li><%= link_to "液体", new_material_category_liquid_path(:material_category_id) %></li>
+                  <li><%= link_to "調味料", new_material_category_seasoning_path(:material_category_id) %></li>
+                  <li><%= link_to "その他", new_material_category_other_material_path(:material_category_id) %></li>
                 </ul>
               </li>
             </ul>
-          </div>
-        </nav>
-      </div>
+          </li>
+          <li><%=link_to "工法", "#" %>
+            <ul>
+              <li><%= link_to "検索", searches_technique_search_path %></li>
+              <li><%= link_to "登録  >>", "#" %>
+                  <ul>
+                    <li><%= link_to "焼き方", new_technique_category_bake_path(:technique_category_id) %></li>
+                    <li><%= link_to "切り方", new_technique_category_cut_path(:technique_category_id) %></li>
+                    <li><%= link_to "その他", new_technique_category_other_technique_path(:technique_category_id) %></li>
+                  </ul>
+              </li>
+            </ul>
+          </li>
+          <li><%=link_to "質問・相談", "#" %>
+            <ul>
+              <li><%= link_to "検索" %></li>
+              <li><%= link_to "登録", "#" %></li>
+              <li><%= link_to "社員検索", "#" %></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
       <main>
         <div class="login_message">
             <p class="notice"><%= notice %></p>

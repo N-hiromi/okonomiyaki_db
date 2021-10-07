@@ -1,30 +1,108 @@
-.sidebar_main{
-  display:flex;
-  height: 100vh;
-  .sidebar{
-    width: 15%;
+$top_bar:#00533f;
+$side_bar: black;
+$side_hover: #663300;
+$side_hover_font: #006600;
+
+html{
+  text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
+  background-color: #d4d9df;
+  a{
+    text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
   }
-  //flex-wrap:wrap;
-  .sidebar .navbar {
-    display: block;
-    .nav_menu{
-      margin: 50% 10%;
-    }
+  li{
+    list-style: none;
   }
-  main{
-    width: 85%;
-    float: right;
-    //application.html.erb適用時
-    .right_main_container{
-      margin-top:10%;
-    }
-    //no_bar.html.erb適用時
-    .login_message{
-      margin-top:8%;
-    }
-    .no_bar_main_container{
-      text-align: center;
-      margin-top: 15%;
-    }
+  body{
+    background-color: #e8ece9;
   }
 }
+
+//top_nav
+.top-nav{
+  background-color:$top_bar;
+}
+.main_side_bar{
+  display:flex;
+}
+
+//side_bar
+.side_bar{
+  width:15%;
+  background-color: $side_bar;
+  margin-top:55px;
+  ul.ddmenu {
+    height: 100vh;
+    padding:0;
+    text-align: center;
+    margin-top:25px; //_alert.scssと干渉して子要素が出てこないから
+    li {
+      position: relative;
+      padding-top:15%;
+      display: block; 
+      a {
+        background-color: $side_bar;
+        color: white;
+        line-height: 40px;
+        font-weight: bold;
+        display: block;
+      }
+      a:hover {
+        color: $side_hover_font;
+        display: block;   
+      }
+    }
+    li:hover > ul {
+      display: block;
+    }
+  }
+  //2階層目
+  ul.ddmenu ul {
+    margin-left: 5%;
+    padding: 0px;
+    display: none;
+    position: absolute;
+    left:95%;
+    top:36%;
+    li {
+      width: 100px;
+      border-top: 1px solid $top_bar;
+      padding-top:0;
+      a {
+        line-height: 40px;
+        text-align: center;
+        font-weight: normal;
+      }
+      a:hover {
+        background-color: #00a968;
+        color: #005500;
+      }
+    }
+  }
+  //3階層目
+  ul.ddmenu ul ul {
+    display: none;       
+    position: absolute; 
+    top: -1%; 
+    left: 95%;
+    border-left: 1px solid pink;
+  }
+}
+
+
+main{
+  width: 85%;
+  float: right;
+  //application.html.erb適用時
+  .right_main_container{
+    margin-top:10%;
+  }
+  //no_bar.html.erb適用時
+  .login_message{
+    margin-top:8%;
+  }
+  .no_bar_main_container{
+    text-align: center;
+    margin-top: 15%;
+  }
+}
+
