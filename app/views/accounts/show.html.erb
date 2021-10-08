@@ -1,18 +1,53 @@
 <h1>Accounts#show</h1>
 <p>Find me in app/views/accounts/show.html.erb</p>
 
-<div class="main user-show  users-right col-9">
-  <div class="container col-6">
-    <div class="user">
-      <dl>
-        <dt><%= Constants::NAME %></dt>
-        <dd><%= current_user.name %></dd>
-        <dt><%= Constants::EMAIL %></dt>
-        <dd><%= current_user.email %></dd>
-        <dt><%= Constants::DEPARTMENT %></dt>
-        <dd><%= current_user.department %></dd>
-        <dt><%= Constants::PASSWORD %></dt>
-        <dd>非表示</dd>
-        <%= link_to "アカウント情報の変更", edit_user_registration_path %>
+<div class="account_container d-flex">
+  <div class="show_icon col-3">
+    <%= image_tag current_user.image, alt:"社員画像"%>
   </div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th scope="row"><%= Constants::NAME %></th>
+        <td><%= current_user.name %></td>
+      </tr>
+      <tr>
+        <th scope="row"><%= Constants::EMAIL %></th>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <th scope="row"><%= Constants::DEPARTMENT %></th>
+        <td><%= current_user.department %></td>
+      </tr>
+      <tr>
+        <th scope="row"><%= Constants::PASSWORD %></th>
+        <td><%= link_to "お忘れの方はこちら", edit_user_password_path %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<%= link_to "アカウント情報の変更", edit_user_registration_path, class:"btn btn-primary" %>
+<div class="user_product">
+  <h2>登録した製品</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col"><%= Constants::IMAGE %></th>
+        <th scope="col"><%= Constants::NAME %></th>
+        <th scope="col"><%= Constants::PRICE %></th>
+        <th scope="col"><%= Constants::COST %></th>
+    </thead>
+    <tbody>
+<% @products.each_with_index do |product, index|%>
+      <tr>
+        <th scope="row"><%= index+ 1 %></th>
+        <td><%= image_tag product.image, alt:"製品画像"%></td>
+        <td><%=product.name %></td>
+        <td><%=product.price %></td>
+        <td><%=product.cost %></td>
+      </tr>
+      <% end%>
+    </tbody>
+  </table>
 </div>

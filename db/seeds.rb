@@ -102,6 +102,16 @@ User.all.each do |user|
     material_category_id: '4'
   )
   user.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.products.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.bakes.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.cuts.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.otherTechniques.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.powders.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.liquids.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.seasonings.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+  user.otherMaterials.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
+
+
 end
 Product.all.each do |product|
   product.productMaterials.create(

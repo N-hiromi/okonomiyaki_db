@@ -3,6 +3,7 @@ class PowdersController < ApplicationController
   end
 
   def show
+    
   end
 
   def new
@@ -23,12 +24,20 @@ class PowdersController < ApplicationController
     end
   end
 
-
   def edit
-    
+    @powder= Powder.find(params[:id])
   end
 
+  def update
+    @powder= Powder.find(params[:id])
+    @powder.update(powder_params)
+      redirect_to tops_path
+      flash[:notice] = "情報を更新しました"
+    end
+  end
+  
   def destroy
+    @powder= Powder.find(params[:id]).destroy
   end
 end
 

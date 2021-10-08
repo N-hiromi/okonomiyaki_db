@@ -1,3 +1,4 @@
+@import "accounts.scss";
 $top_bar:#00533f;
 $side_bar: black;
 $side_hover: #663300;
@@ -14,6 +15,9 @@ html{
   }
   body{
     background-color: #e8ece9;
+    .clear{
+      clear:both;
+    }
   }
 }
 
