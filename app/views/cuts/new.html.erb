@@ -1,0 +1,47 @@
+<h2 class="mb-4">切り方登録</h2>
+<div class="form">
+  <table class="table">
+    <%= form_with model: @cut, url: {controller: 'cuts', action: 'create'},local:true, id: "cut", method: :post do |f| %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= Constants::NAME %></th>
+          <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::COST %></th>
+          <td><%= f.text_field :cost, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">円</td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::TOOL %></th>
+          <td><%= f.text_field :tool, autofocus: true, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::IMAGE %></th>
+          <td><%= f.file_field:image, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::DESCRIPTION %></th>
+          <td><%= f.text_area:description, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::WARNING %></th>
+          <td><%= f.text_area:warning, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::WIDTH %></th>
+          <td><%= f.text_field :width, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">mm</td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::HEIGHT %></th>
+          <td><%= f.text_field :height, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">mm</td>
+        </tr>
+    <% end %>
+  </table>
+  <div class="text-right float-end">
+    <button class="btn btn-primary" type="submit" form="cut">登録</button>
+  </div>
+</div>
+

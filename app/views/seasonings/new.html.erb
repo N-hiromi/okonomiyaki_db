@@ -1,0 +1,33 @@
+<h2 class="mb-4">調味料登録</h2>
+<div class="form">
+  <table class="table">
+    <%= form_with model: @seasoning, url: {controller: 'seasonings', action: 'create'},local:true, id: "seasoning", method: :post do |f| %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= Constants::NAME %></th>
+          <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::COST %></th>
+          <td><%= f.text_field :cost, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">円</td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::IMAGE %></th>
+          <td><%= f.file_field:image, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::DESCRIPTION %></th>
+          <td><%= f.text_area:description, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::WARNING %></th>
+          <td><%= f.text_area:warning, class: "form-control" %></td>
+        </tr>
+    <% end %>
+  </table>
+  <div class="text-right float-end">
+    <button class="btn btn-primary" type="submit" form="seasoning">登録</button>
+  </div>
+</div>
+

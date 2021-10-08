@@ -1,49 +1,50 @@
-<h2>製品登録</h2>
-
-<%= form_with model: @product, local:true, method: :post do |f| %>
-  <div class="form-group">
-    <p>名前</p>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+<h2 class="mb-4">製品登録</h2>
+<div class="form">
+  <table class="table">
+    <%= form_with model: @product, url: {controller: 'products', action: 'create'},local:true, id: "product", method: :post do |f| %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= Constants::NAME %></th>
+          <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::PRICE %></th>
+          <td><%= f.text_field :price, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">円</td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::COST %></th>
+          <td><%= f.text_field :cost, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">円</td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::IMAGE %></th>
+          <td><%= f.file_field:image, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::APP %></th>
+          <td><%= f.text_field :app, autofocus: true, class: "form-control" %></td>
+        </tr>
+        <tr>
+        <tr>
+          <th scope="row"><%= Constants::JUICY %></th>
+          <td><%= f.text_field :juicy, autofocus: true, class: "form-control" %></td>
+        </tr>
+        <tr>
+        <tr>
+          <th scope="row"><%= Constants::TASTE %></th>
+          <td><%= f.text_field :taste, autofocus: true, class: "form-control" %></td>
+        </tr>
+        <tr>
+        <tr>
+          <th scope="row"><%= Constants::SMELL %></th>
+          <td><%= f.text_field :smell, autofocus: true, class: "form-control" %></td>
+        </tr>
+        <tr>
+    <% end %>
+  </table>
+  <div class="text-right float-end">
+    <button class="btn btn-primary" type="submit" form="product">登録</button>
   </div>
+</div>
 
-  <div class="form-group">
-    <p>価格</p>
-    <%= f.text_field :price, autofocus: true, class: "form-control" %>円
-  </div>
-
-  <div class="form-group">
-    <p>原価</p>
-    <%= f.text_field :cost, autofocus: true, class: "form-control" %>円
-  </div>
-
-  <div class="form-group">
-    <p>画像</p>
-    <%= f.file_field:image, class: "form-control" %>
-  </div>
-
-  <h3>性能</h3>
-
-  <div class="form-group">
-    <p>見た目</p>
-    <%= f.text_field :app, autofocus: true, class: "form-control" %>円
-  </div>
-
-  <div class="form-group">
-    <p>ジューシーさ</p>
-    <%= f.text_field :price, autofocus: true, class: "form-control" %>円
-  </div>
-
-  <div class="form-group">
-    <p>味</p>
-    <%= f.text_field :juicy, autofocus: true, class: "form-control" %>円
-  </div>
-
-  <div class="form-group">
-    <p>香り</p>
-    <%= f.text_field :price, autofocus: true, class: "form-control" %>円
-  </div>
-  <div class="actions">
-    <%= f.submit "次へ" %>
-  </div>
-<% end %>
-<!--%= render produ %-->

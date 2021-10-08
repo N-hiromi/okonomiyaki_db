@@ -23,4 +23,5 @@ module Constants
   TAG= "関連タグ"
   COMMENT= "コメント"
   IMAGE= "画像"
+  TIME= "時間"
 end

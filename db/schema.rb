@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.float "temp"
     t.float "time"
     t.integer "user_id"
-    t.integer "techniqueCategory_id"
+    t.integer "technique_category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.float "width"
     t.float "height"
     t.integer "user_id"
-    t.integer "techniqueCategory_id"
+    t.integer "technique_category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.string "warning"
     t.float "viscosity"
     t.float "density"
-    t.integer "materialCategory_id"
+    t.integer "material_category_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.float "cost"
     t.text "description"
     t.text "warning"
-    t.integer "materialCategory_id"
+    t.integer "material_category_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.text "warning"
     t.float "time"
     t.integer "user_id"
-    t.integer "techniqueCategory_id"
+    t.integer "technique_category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.float "density"
     t.float "ssa"
     t.integer "user_id"
-    t.integer "materialCategory_id"
+    t.integer "material_category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -148,11 +148,11 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.integer "powder_id"
     t.integer "liquid_id"
     t.integer "seasoning_id"
-    t.integer "otherMaterial_id"
+    t.integer "other_material_id"
     t.float "powder_weight"
     t.float "liquid_weight"
     t.float "seasoning_weight"
-    t.float "otherMaterial_weight"
+    t.float "other_material_weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.integer "product_id"
     t.integer "bake_id"
     t.integer "cut_id"
-    t.integer "otherMethod_id"
+    t.integer "other_method_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -180,8 +180,8 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.string "name"
     t.integer "price"
     t.float "cost"
-    t.integer "productTechnique_id"
-    t.integer "productMaterial_id"
+    t.integer "product_technique_id"
+    t.integer "product_material_id"
     t.integer "user_id"
     t.integer "smell"
     t.integer "taste"
@@ -197,7 +197,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.float "cost"
     t.text "description"
     t.text "warning"
-    t.integer "materialCategory_id"
+    t.integer "material_category_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

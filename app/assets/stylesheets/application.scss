@@ -97,7 +97,7 @@ main{
   float: right;
   //application.html.erb適用時
   .right_main_container{
-    margin-top:10%;
+    margin-top:1%;
   }
   //no_bar.html.erb適用時
   .login_message{
@@ -106,6 +106,13 @@ main{
   .no_bar_main_container{
     text-align: center;
     margin-top: 15%;
+  }
+}
+
+//登録form
+.form{
+  p{
+    display:inline-block;
   }
 }
 

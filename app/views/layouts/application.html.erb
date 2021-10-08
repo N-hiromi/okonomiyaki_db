@@ -50,10 +50,10 @@
               <li><%= link_to "検索", searches_material_search_path %></li>
               <li><%= link_to "登録  >>", "#" %> 
                 <ul>
-                  <li><%= link_to "粉末", new_material_category_powder_path(:material_category_id) %></li>
-                  <li><%= link_to "液体", new_material_category_liquid_path(:material_category_id) %></li>
-                  <li><%= link_to "調味料", new_material_category_seasoning_path(:material_category_id) %></li>
-                  <li><%= link_to "その他", new_material_category_other_material_path(:material_category_id) %></li>
+                  <li><%= link_to "粉末", new_material_category_powder_path(material_category_id:1) %></li>
+                  <li><%= link_to "液体", new_material_category_liquid_path(material_category_id:2) %></li>
+                  <li><%= link_to "調味料", new_material_category_seasoning_path(material_category_id:3) %></li>
+                  <li><%= link_to "その他", new_material_category_other_material_path(material_category_id:4) %></li>
                 </ul>
               </li>
             </ul>

@@ -5,11 +5,11 @@ class CreateProductMaterials < ActiveRecord::Migration[6.1]
       t.integer :powder_id
       t.integer :liquid_id
       t.integer :seasoning_id
-      t.integer :otherMaterial_id
+      t.integer :other_material_id
       t.float :powder_weight
       t.float :liquid_weight
       t.float :seasoning_weight
-      t.float :otherMaterial_weight
+      t.float :other_material_weight
 
       t.timestamps
     end

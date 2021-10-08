@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'searches/material_search'
     get 'searches/technique_search'
     get 'searches/user_search'
+    get 'searches/discuss_search'
     devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions',

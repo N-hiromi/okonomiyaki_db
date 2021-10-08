@@ -7,7 +7,7 @@ class CreateLiquids < ActiveRecord::Migration[6.1]
       t.string :warning
       t.float :viscosity
       t.float :density
-      t.integer :materialCategory_id
+      t.integer :material_category_id
       t.integer :user_id
       
       t.timestamps

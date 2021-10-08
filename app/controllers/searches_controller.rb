@@ -31,4 +31,9 @@ class SearchesController < ApplicationController
     #@q = User.ransack(params[:q])
     #@user = User.find(params[:id])
   end
+
+  def discuss_search
+    #@q = User.ransack(params[:q])
+    #@user = User.find(params[:id])
+  end
 end

@@ -17,6 +17,7 @@ services:
 
   web:
     build: .
+    stdin_open: true
     tty: true
     depends_on:
       - db

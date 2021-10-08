@@ -25,6 +25,7 @@ TechniqueCategory.create!(
     {name: '加熱'},{name: '切り方'},{name: 'それ以外'}
   ]
 )
+
 User.all.each do |user|
   user.products.create(
     name: 'お好み焼き',
@@ -34,8 +35,8 @@ User.all.each do |user|
     taste: '80',
     juicy: '60',
     app: '70',
-    productTechnique_id: '1',
-    productMaterial_id: '1'
+    product_technique_id: '1',
+    product_material_id: '1'
   )
   user.bakes.create!(
     name: '軽く焼く',
@@ -45,7 +46,7 @@ User.all.each do |user|
     warning: '火傷するかも',
     temp: '100',
     time: '1',
-    techniqueCategory_id: '1'
+    technique_category_id: '1'
   )
   user.cuts.create!(
     name: 'みじん切り',
@@ -55,7 +56,7 @@ User.all.each do |user|
     warning: '手を切らないように',
     width: '0.5',
     height: '0.5',
-    techniqueCategory_id: '2'
+    technique_category_id: '2'
   )
   user.otherTechniques.create!(
     name: 'お湯で洗う',
@@ -64,7 +65,8 @@ User.all.each do |user|
     description: '野菜がシャキシャキになる',
     warning: '火傷しないでね',
     time: '0.25',
-    techniqueCategory_id: '3'
+    technique_category_id: '3'
+
   )
   user.powders.create!(
     name: '薄力粉',
@@ -74,7 +76,7 @@ User.all.each do |user|
     particle_size: '1',
     density: '1',
     ssa: '100',
-    materialCategory_id: '1'
+    material_category_id: '1'
   )
   user.liquids.create!(
     name: '牛乳',
@@ -83,21 +85,21 @@ User.all.each do |user|
     warning: '滑ると危険',
     viscosity: '3',
     density: '1',
-    materialCategory_id: '2'
+    material_category_id: '2'
   )
   user.seasonings.create!(
     name: '塩',
     cost: '1',
     description: '必需品。入れすぎるとしょっぱい。',
     warning: 'とりすぎ注意',
-    materialCategory_id: '3'
+    material_category_id: '3'
   )
   user.otherMaterials.create!(
     name: 'キャベツ',
     cost: '5',
     description: '野菜の一種。シャキシャキ。',
     warning: '重量物注意',
-    materialCategory_id: '4'
+    material_category_id: '4'
   )
   user.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
 end
@@ -107,17 +109,17 @@ Product.all.each do |product|
     powder_id: '1',
     liquid_id: '1',
     seasoning_id: '1',
-    otherMaterial_id: '1',
+    other_material_id: '1',
     powder_weight: '1',
     liquid_weight: '1',
     seasoning_weight: '1',
-    otherMaterial_weight: '1'
+    other_material_weight: '1'
   )
   product.productTechniques.create(
     product_id: '1',
     bake_id: '1',
     cut_id: '1',
-    otherMethod_id: '1',
+    other_method_id: '1',
   )
 end
 bake1 = Bake.find(1)
