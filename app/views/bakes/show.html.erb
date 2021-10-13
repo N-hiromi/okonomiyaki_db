@@ -1,3 +1,26 @@
-<h1>Bakes#show</h1>
-<p>Find me in app/views/bakes/show.html.erb</p>
-
+<div class="show d-flex justify-content-evenly">
+  <div class= "show_image col-3">
+    <% if @bake.image.presence %>
+      <%= image_tag @bake.image %>
+    <% else %>
+      <%= image_tag "27439.png" %>
+    <% end %>
+  </div>
+  <div class="user_technique_table">
+    <table class="table">
+      <tbody>
+        <%= render "/layouts/common_technique_show_tbody", technique: @bake %>
+        <tr>
+          <th scope="col"><%= Constants::TEMP %></th>
+          <td><%= @bake.temp %>℃</td>
+        </tr>
+        <tr>
+          <th scope="col"><%= Constants::TIME %></th>
+          <td><%= @bake.time %>h</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to "情報の変更", edit_bake_path, class:"btn btn-primary text-right float-end my-4" %>
+<div class="clear"></div>

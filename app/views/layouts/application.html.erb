@@ -47,7 +47,14 @@
           </li>
           <li><%=link_to "材料", "#" %>
             <ul>
-              <li><%= link_to "検索", searches_material_search_path %></li>
+              <li><%= link_to "検索　>>", "#" %>
+                <ul>
+                  <li><%= link_to "粉末", material_category_powders_path(material_category_id:1) %></li>
+                  <li><%= link_to "液体", material_category_liquids_path(material_category_id:2) %></li>
+                  <li><%= link_to "調味料", material_category_seasonings_path(material_category_id:3) %></li>
+                  <li><%= link_to "その他", material_category_other_materials_path(material_category_id:4) %></li>
+                </ul>
+              </li>
               <li><%= link_to "登録  >>", "#" %> 
                 <ul>
                   <li><%= link_to "粉末", new_material_category_powder_path(material_category_id:1) %></li>
@@ -60,12 +67,18 @@
           </li>
           <li><%=link_to "工法", "#" %>
             <ul>
-              <li><%= link_to "検索", searches_technique_search_path %></li>
+              <li><%= link_to "検索  >>", "#" %>
+                <ul>
+                    <li><%= link_to "焼き方", technique_category_bakes_path(technique_category_id:1) %></li>
+                    <li><%= link_to "切り方", technique_category_cuts_path(technique_category_id:2) %></li>
+                    <li><%= link_to "その他", technique_category_other_techniques_path(technique_category_id:3) %></li>
+                  </ul>
+              </li>
               <li><%= link_to "登録  >>", "#" %>
                   <ul>
-                    <li><%= link_to "焼き方", new_technique_category_bake_path(:technique_category_id) %></li>
-                    <li><%= link_to "切り方", new_technique_category_cut_path(:technique_category_id) %></li>
-                    <li><%= link_to "その他", new_technique_category_other_technique_path(:technique_category_id) %></li>
+                    <li><%= link_to "焼き方", new_technique_category_bake_path(technique_category_id:1) %></li>
+                    <li><%= link_to "切り方", new_technique_category_cut_path(technique_category_id:2) %></li>
+                    <li><%= link_to "その他", new_technique_category_other_technique_path(technique_category_id:3) %></li>
                   </ul>
               </li>
             </ul>

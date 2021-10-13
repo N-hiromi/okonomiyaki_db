@@ -1,2 +1,18 @@
-<h1>Seasonings#show</h1>
-<p>Find me in app/views/seasonings/show.html.erb</p>
+<div class="show d-flex justify-content-evenly">
+  <div class= "show_image col-3">
+    <% if @seasoning.image.presence %>
+      <%= image_tag @seasoning.image %>
+    <% else %>
+      <%= image_tag "27439.png" %>
+    <% end %>
+  </div>
+  <div class="user_material_table">
+    <table class="table">
+      <tbody>
+        <%= render "/layouts/common_material_show_tbody", material: @seasoning %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to "情報の変更", edit_seasoning_path, class:"btn btn-primary text-right float-end my-4" %>
+<div class="clear"></div>

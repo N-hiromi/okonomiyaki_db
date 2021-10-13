@@ -1,2 +1,23 @@
-<h1>OtherTechniques#show</h1>
-<p>Find me in app/views/other_techniques/show.html.erb</p>
+<div class="show d-flex justify-content-evenly">
+  <div class= "show_image col-3">
+    <% if @other_technique.image.presence %>
+      <%= image_tag @other_technique.image %>
+    <% else %>
+      <%= image_tag "27439.png" %>
+    <% end %>
+  </div>
+  
+  <div class="user_technique_table">
+    <table class="table">
+      <tbody>
+        <%= render "/layouts/common_technique_show_tbody", technique: @other_technique %>
+        <tr>
+          <th scope="col"><%= Constants::TIME %></th>
+          <td><%= @other_technique.time %>h</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to "情報の変更", edit_other_technique_path, class:"btn btn-primary text-right float-end my-4" %>
+<div class="clear"></div>

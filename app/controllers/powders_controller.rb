@@ -1,9 +1,15 @@
 class PowdersController < ApplicationController
   def index
+    @q = Powder.ransack(params[:q])
+    @materials = @q.result
+    if @q.blank?
+      @materials = Powder.all
+    end
+    @count= @materials.count
   end
 
   def show
-    
+    @powder = Powder.find(params[:id])
   end
 
   def new
@@ -15,7 +21,6 @@ class PowdersController < ApplicationController
     @material_category= MaterialCategory.find(params[:material_category_id])
     @powder = @material_category.powders.new(powder_params)
     if @powder.save!
-      @powder.save!
         flash[:notice] = "材料を登録しました"
         redirect_to tops_path
     else
@@ -33,15 +38,17 @@ class PowdersController < ApplicationController
     @powder.update(powder_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
-    end
   end
   
   def destroy
     @powder= Powder.find(params[:id]).destroy
+    redirect_to account_path
+    flash[:notice] = "情報を削除しました"
+  end
+
+  private
+  def powder_params
+    params.require(:powder).permit(:name, :cost, :description, :image, :warning,:particle_size, :density, :ssa, :material_category_id).merge(user_id: current_user.id)
   end
 end
 
-private
-def powder_params
-  params.require(:powder).permit(:name, :cost, :description, :image, :warning,:particle_size, :density, :ssa, :material_category_id).merge(user_id: current_user.id)
-end

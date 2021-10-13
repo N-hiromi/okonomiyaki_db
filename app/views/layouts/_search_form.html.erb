@@ -1,0 +1,17 @@
+<h2>検索</h2>
+<%= search_form_for @q, url: url do |f| %>
+  <div class="form_container">
+    <div class="form_name">
+      <p><%= Constants::NAME %></p>
+      <%= f.search_field :name_cont, class:"form-inline" %>
+    </div>
+    <div class="form_cost">
+      <p><%= Constants::COST %></p>
+      <%= f.search_field :cost_gteq, placeholder:"以上", size:5, class:"form-inline me-1" %>
+      〜
+      <%= f.search_field :cost_lteq, placeholder:"以下", size:5, class:"form-inline ms-1" %>
+    </div>
+    <%= f.submit "検索", class: "btn btn-primary submit" %>
+  </div>
+<% end %>
+<h2>検索結果：<%=@count %>件</h2>

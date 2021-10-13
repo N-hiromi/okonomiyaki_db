@@ -1,0 +1,14 @@
+<h2 class="mb-4">その他材料登録</h2>
+<div class="form">
+  <table class="table">
+    <%= form_with model: @other_material, url: {controller: 'other_materials', action: 'update'},local:true, id: 'other_material', method: :patch do |f| %>
+      <tbody>
+        <%= render "/layouts/common_material_form", f: f %>
+    <% end %>
+  </table>
+  <div class="text-right float-end">
+    <button class="btn btn-primary" type="submit" form="other_material">登録</button>
+    <%= button_to "削除", "/okonomiyakidb/other_materials/#{@other_material.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete, class:"btn btn-danger mt-1" %>
+  </div>
+</div>
+

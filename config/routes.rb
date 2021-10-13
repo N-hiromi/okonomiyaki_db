@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   scope "/okonomiyakidb" do
     get "tops/help"
+    get 'searches/material_show'
     get 'searches/product_search'
     get 'searches/material_search'
     get 'searches/technique_search'

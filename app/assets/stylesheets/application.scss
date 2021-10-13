@@ -18,6 +18,40 @@ html{
     .clear{
       clear:both;
     }
+    h2{
+      margin-top:5%;
+      margin-bottom:5%;
+    }
+    h3{
+      text-align: left;
+      margin-top:2.5%;
+      margin-bottom:2.5%;
+    }
+    td{
+      vertical-align:middle;
+    }
+    .no_data_table{
+      display:none;
+    }
+    img {
+      width:auto;
+      height:auto;
+      max-width:70%;
+      max-height:70%;
+    }
+    .form_container{
+      margin:0 24%;
+      display:flex;
+      justify-content: space-around;
+    }
+    p{
+      margin-bottom:0;
+      text-align: left;
+    }
+    .submit{
+      height: 36px;
+      margin-top:20px;
+    }
   }
 }
 

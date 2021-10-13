@@ -1,2 +1,31 @@
-<h1>Powders#show</h1>
-<p>Find me in app/views/powders/show.html.erb</p>
+<div class="show d-flex justify-content-evenly">
+  <div class= "show_image col-3">
+    <% if @powder.image.presence %>
+      <%= image_tag @powder.image %>
+    <% else %>
+      <%= image_tag "27439.png" %>
+    <% end %>
+  </div>
+  
+  <div class="user_material_table">
+    <table class="table">
+      <tbody>
+        <%= render "/layouts/common_material_show_tbody", material: @powder %>
+        <tr>
+          <th scope="col"><%= Constants::PARTICLE_SIZE %></th>
+          <td><%= @powder.particle_size %>nm</td>
+        </tr>
+        <tr>
+          <th scope="col"><%= Constants::DENSITY %></th>
+          <td><%= @powder.density %>g/cm3</td>
+        </tr>
+        <tr>
+          <th scope="col"><%= Constants::SSA %></th>
+          <td><%= @powder.ssa %>m2/g</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to "情報の変更", edit_powder_path, class:"btn btn-primary text-right float-end my-4" %>
+<div class="clear"></div>

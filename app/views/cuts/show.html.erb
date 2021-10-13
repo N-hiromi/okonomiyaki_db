@@ -1,2 +1,32 @@
-<h1>Cuts#show</h1>
-<p>Find me in app/views/cuts/show.html.erb</p>
+
+<div class="show d-flex justify-content-evenly">
+  <div class= "show_image col-3">
+    <% if @cut.image.presence %>
+      <%= image_tag @cut.image %>
+    <% else %>
+      <%= image_tag "27439.png" %>
+    <% end %>
+  </div>
+  
+  <div class="user_technique_table">
+    <table class="table">
+      <tbody>
+        <%= render "/layouts/common_technique_show_tbody", technique: @cut %>
+        <tr>
+          <th scope="col"><%= Constants::WARNING %></th>
+          <td><%= @cut.warning %></td>
+        </tr>
+        <tr>
+          <th scope="col"><%= Constants::WIDTH %></th>
+          <td><%= @cut.width %>mm</td>
+        </tr>
+        <tr>
+          <th scope="col"><%= Constants::HEIGHT %></th>
+          <td><%= @cut.height %>mm</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to "情報の変更", edit_cut_path, class:"btn btn-primary text-right float-end my-4" %>
+<div class="clear"></div>

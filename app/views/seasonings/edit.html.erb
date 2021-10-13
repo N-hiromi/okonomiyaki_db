@@ -1,0 +1,14 @@
+<h2 class="mb-4">調味料登録</h2>
+<div class="form">
+  <table class="table">
+    <%= form_with model: @seasoning, url: {controller: 'seasonings', action: 'update'},local:true, id: "seasoning", method: :patch do |f| %>
+      <tbody>
+        <%= render "/layouts/common_material_form", f: f %>
+    <% end %>
+  </table>
+  <div class="text-right float-end">
+    <button class="btn btn-primary" type="submit" form="seasoning">登録</button>
+    <%= button_to "削除", "/okonomiyakidb/seasonings/#{@seasoning.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete, class:"btn btn-danger mt-1" %>
+  </div>
+</div>
+

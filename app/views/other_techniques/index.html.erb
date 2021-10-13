@@ -1,2 +1,17 @@
-<h1>OtherTechniques#index</h1>
-<p>Find me in app/views/other_techniques/index.html.erb</p>
+<%= render "/layouts/search_form", url: technique_category_other_techniques_path, q: @q %>
+<%= render "/layouts/technique_blank" %>
+<table class="table<%= ' no_data_table' if @techniques.blank? %>">
+  <%= render '/layouts/show_thead' %>
+  <tbody>
+    <% @techniques.each_with_index do |technique, index| %>
+      <tr>
+        <th scope="row"><%= index+ 1 %></th>
+        <td><%= image_tag technique.image if technique.image.present? %></td>
+        <td><%=link_to technique.name, other_technique_path(technique.id) %></td>
+        <td><%=technique.cost %></td>
+        <td><%=technique.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%=technique.updated_at.strftime('%Y/%m/%d') %></td>
+      </tr>
+      <% end%>
+    </tbody>
+</table>

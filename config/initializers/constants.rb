@@ -24,4 +24,6 @@ module Constants
   COMMENT= "コメント"
   IMAGE= "画像"
   TIME= "時間"
+  CREATE= "登録日"
+  UPDATE= "更新日"
 end
