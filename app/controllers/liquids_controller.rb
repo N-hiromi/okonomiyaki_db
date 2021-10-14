@@ -20,12 +20,12 @@ class LiquidsController < ApplicationController
   def create
     @material_category= MaterialCategory.find(params[:material_category_id])
     @liquid = @material_category.liquids.new(liquid_params)
-    if @liquid.save!
+    if @liquid.save
         flash[:notice] = "材料を登録しました"
         redirect_to tops_path
     else
-       flash[:notice] = "登録失敗"
-      render new_material_category_liquid_path(material_category_id:1)
+      flash[:notice] = "登録失敗"
+      render action: :new
     end
   end
 
@@ -35,9 +35,13 @@ class LiquidsController < ApplicationController
 
   def update
     @liquid= Liquid.find(params[:id])
-    @liquid.update(liquid_params)
+    if @liquid.update(liquid_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
+    else
+      flash[:notice] = "編集に失敗しました"
+      render action: :edit
+    end
   end
   
   def destroy

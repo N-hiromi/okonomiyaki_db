@@ -27,5 +27,15 @@
     </table>
   </div>
 </div>
-<%= link_to "情報の変更", edit_powder_path, class:"btn btn-primary text-right float-end my-4" %>
+<div class="submit<%= ' no_permitted_user' if @powder.user_id != current_user.id %>">
+  <%= link_to "情報の変更", edit_powder_path, class:"btn btn-primary text-right float-end my-4" %>
+</div>
+
 <div class="clear"></div>
+<div class="comment">
+  <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
+    <%= f.text_field :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>
+    <%= f.submit "投稿する", class: "btn btn-primary float-end" %>
+    <div class="clear"></div>
+  <% end %>
+</div>

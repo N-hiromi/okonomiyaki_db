@@ -25,7 +25,7 @@ class BakesController < ApplicationController
         redirect_to tops_path
     else
       flash[:notice] = "登録失敗"
-      redirect_to new_technique_category_bake_path(params[:technique_category_id])
+      render action: :new
     end
   end
 
@@ -35,9 +35,13 @@ class BakesController < ApplicationController
 
   def update
     @bake= Bake.find(params[:id])
-    @bake.update(bake_params)
+    if @bake.update(bake_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
+    else
+      flash[:notice] = "編集に失敗しました"
+      render action: :edit
+    end
   end
   
   def destroy

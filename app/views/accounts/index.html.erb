@@ -1,32 +1,33 @@
 <h2>検索</h2>
-<%= search_form_for @q, url: url do |f| %>
+<%= search_form_for @q, url: accounts_path do |f| %>
   <div class="form_container">
     <div class="form_name">
       <p><%= Constants::NAME %></p>
       <%= f.search_field :name_cont, class:"form-inline" %>
     </div>
-    <div class="form_cost">
-      <p><%= Constants::COST %></p>
-      <%= f.search_field :cost_gteq, placeholder:"以上", size:5, class:"form-inline me-1" %>
-      〜
-      <%= f.search_field :cost_lteq, placeholder:"以下", size:5, class:"form-inline ms-1" %>
+    <div class="form_name">
+      <p><%= Constants::DEPARTMENT %></p>
+      <%= f.search_field :department_cont, class:"form-inline" %>
     </div>
     <%= f.submit "検索", class: "btn btn-primary submit" %>
   </div>
 <% end %>
 <h2>検索結果：<%=@count %>件</h2>
-
-<table class="table">
+<% if @users.blank? %>
+  検索結果なし
+<% end %>
+<table class="table<%= ' no_data_table' if @users.blank? %>">
   <thead>
     <tr>
       <th scope="col">No.</th>
       <th scope="col"><%= Constants::IMAGE %></th>
       <th scope="col"><%= Constants::NAME %></th>
       <th scope="col"><%= Constants::DEPARTMENT %></th>
+      <th scope="col">コメントする</th>
     </tr>
   </thead>
   <tbody>
-      <% @user.each_with_index do |user, index| %>
+      <% @users.each_with_index do |user, index| %>
       <tr>
         <th scope="row"><%= index+ 1 %></th>
         <td><%= image_tag user.image if user.image.present? %></td>

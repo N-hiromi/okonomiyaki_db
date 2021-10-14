@@ -20,12 +20,12 @@ class PowdersController < ApplicationController
   def create
     @material_category= MaterialCategory.find(params[:material_category_id])
     @powder = @material_category.powders.new(powder_params)
-    if @powder.save!
+    if @powder.save
         flash[:notice] = "材料を登録しました"
         redirect_to tops_path
     else
-       flash[:notice] = "登録失敗"
-      render new_material_category_powder_path(material_category_id:1)
+      flash[:notice] = "登録失敗"
+      render action: :new
     end
   end
 
@@ -35,9 +35,13 @@ class PowdersController < ApplicationController
 
   def update
     @powder= Powder.find(params[:id])
-    @powder.update(powder_params)
+    if @powder.update(powder_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
+    else
+      flash[:notice] = "編集に失敗しました"
+      render action: :edit
+    end
   end
   
   def destroy

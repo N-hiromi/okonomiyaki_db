@@ -22,8 +22,8 @@ class ProductsController < ApplicationController
         flash[:notice] = "製品を登録しました"
         redirect_to tops_path
     else
-       flash[:notice] = "登録失敗"
-      render new_material_category_powder_path(material_category_id:1)
+      flash[:notice] = "登録失敗"
+      render action: :new
     end
   end
 
@@ -33,9 +33,13 @@ class ProductsController < ApplicationController
 
   def update
     @powder= Powder.find(params[:id])
-    @powder.update(powder_params)
+    if @powder.update(powder_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
+    else
+      flash[:notice] = "編集に失敗しました"
+      render action: :edit
+    end
   end
 
   def destroy

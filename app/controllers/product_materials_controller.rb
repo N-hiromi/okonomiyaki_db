@@ -13,7 +13,7 @@ class ProductMaterialsController < ApplicationController
         redirect_to tops_path
     else
        flash[:notice] = "登録失敗"
-      #render new_technique_category_cut_path(technique_category_id:1)
+       render action: :new
     end
   end
 
