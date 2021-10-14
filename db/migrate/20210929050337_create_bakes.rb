@@ -10,6 +10,7 @@ class CreateBakes < ActiveRecord::Migration[6.1]
       t.float :time
       t.integer :user_id
       t.integer :technique_category_id
+      
       t.timestamps
     end
   end

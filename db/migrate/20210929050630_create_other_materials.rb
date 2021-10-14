@@ -7,7 +7,7 @@ class CreateOtherMaterials < ActiveRecord::Migration[6.1]
       t.text :warning
       t.integer :material_category_id
       t.integer :user_id
-
+      
       t.timestamps
     end
   end

@@ -1,4 +1,13 @@
 class AccountsController < ApplicationController
+  def index
+    @q = User.ransack(params[:q])
+    @users = @q.result
+    if @q.blank?
+      @users = User.all
+    end
+    @count= @users.count
+  end
+
   def show
     @products= current_user.products
     @powders= current_user.powders

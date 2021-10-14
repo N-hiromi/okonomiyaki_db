@@ -26,21 +26,29 @@
           <td><%= f.text_field :app, autofocus: true, class: "form-control" %></td>
         </tr>
         <tr>
-        <tr>
           <th scope="row"><%= Constants::JUICY %></th>
           <td><%= f.text_field :juicy, autofocus: true, class: "form-control" %></td>
         </tr>
-        <tr>
         <tr>
           <th scope="row"><%= Constants::TASTE %></th>
           <td><%= f.text_field :taste, autofocus: true, class: "form-control" %></td>
         </tr>
         <tr>
-        <tr>
           <th scope="row"><%= Constants::SMELL %></th>
           <td><%= f.text_field :smell, autofocus: true, class: "form-control" %></td>
         </tr>
         <tr>
+          <th>焼き方</th>
+          <td><%= f.collection_select :bake_id, Bake.all, :id, :name, {prompt: "焼き方を選択"}, {class: "form-control"} %></td>
+        </tr>
+        <tr>
+          <th>切り方</th>
+          <td><%= f.collection_select :bake_id, Cut.all, :id, :name, {prompt: "切り方を選択"}, {class: "form-control"} %></td>
+        </tr>
+        <tr>
+          <th>それ以外の工法</th>
+          <td><%= f.collection_select :bake_id, OtherTechnique.all, :id, :name, {prompt: "その他工法を選択"}, {class: "form-control"} %></td>
+        </tr>
     <% end %>
   </table>
   <div class="text-right float-end">

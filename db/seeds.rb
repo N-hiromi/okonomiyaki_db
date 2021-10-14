@@ -35,8 +35,8 @@ User.all.each do |user|
     taste: '80',
     juicy: '60',
     app: '70',
-    product_technique_id: '1',
-    product_material_id: '1'
+    product_material_id: '1',
+    product_technique_id: '1'
   )
   user.bakes.create!(
     name: '軽く焼く',
@@ -101,20 +101,11 @@ User.all.each do |user|
     warning: '重量物注意',
     material_category_id: '4'
   )
-  user.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.products.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.bakes.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.cuts.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.otherTechniques.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.powders.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.liquids.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.seasonings.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-  #user.otherMaterials.image.attach(io: File.open(Rails.root.join('app/assets/images/ nav_icon_images/27439.png')),filename: '27439.png')
-
+  #user.image.attach(io: File.open(Rails.root.join('app/assets/images/nav_icon_images/27439.png')),filename: '27439.png')
 
 end
 Product.all.each do |product|
-  product.productMaterials.create(
+  product.productMaterials.create!(
     product_id: '1',
     powder_id: '1',
     liquid_id: '1',
@@ -125,15 +116,14 @@ Product.all.each do |product|
     seasoning_weight: '1',
     other_material_weight: '1'
   )
-  product.productTechniques.create(
-    product_id: '1',
-    bake_id: '1',
+  product.productTechniques.create!(
     cut_id: '1',
-    other_method_id: '1',
+    bake_id: '1',
+    other_technique_id: '1',
   )
 end
 bake1 = Bake.find(1)
-  bake1.comments.create(
+  bake1.comments.create!(
     user_id: '1',
     comment: 'もっと温度上げられませんか?'
   )

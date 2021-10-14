@@ -1,6 +1,9 @@
 class Cut < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :techniqueCategory, optional: true
+  has_many :productTechniques
+  has_many :products, through: :productTechniques
+  belongs_to :product, optional: true
   has_one_attached :image
   has_many :comments, as: :commentable
   validates :name, presence: true

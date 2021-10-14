@@ -1,0 +1,19 @@
+<%= render "/layouts/search_form", url: products_path, q: @q %>
+<% if @products.blank? %>
+  検索結果なし
+<% end %>
+<table class="table<%= ' no_data_table' if @products.blank? %>">
+  <%= render '/layouts/show_thead' %>
+  <tbody>
+    <% @products.each_with_index do |product, index| %>
+      <tr>
+        <th scope="row"><%= index+ 1 %></th>
+        <td><%= image_tag product.image if product.image.present? %></td>
+        <td><%= link_to product.name, product_path(product.id) %></td>
+        <td><%= product.cost %></td>
+        <td><%= product.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= product.updated_at.strftime('%Y/%m/%d') %></td>
+      </tr>
+      <% end%>
+    </tbody>
+</table>

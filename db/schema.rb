@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_075526) do
+ActiveRecord::Schema.define(version: 2021_10_14_003226) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -157,21 +157,11 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "product_performances", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "product_id"
-    t.float "smell"
-    t.float "taste"
-    t.float "juicy"
-    t.float "app"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "product_techniques", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "bake_id"
     t.integer "cut_id"
-    t.integer "other_method_id"
+    t.integer "bake_id"
+    t.integer "other_technique_id"
+    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -180,8 +170,9 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.string "name"
     t.integer "price"
     t.float "cost"
-    t.integer "product_technique_id"
     t.integer "product_material_id"
+    t.integer "product_technique_id"
+    t.text "description"
     t.integer "user_id"
     t.integer "smell"
     t.integer "taste"

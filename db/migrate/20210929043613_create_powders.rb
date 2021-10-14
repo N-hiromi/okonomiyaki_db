@@ -10,6 +10,7 @@ class CreatePowders < ActiveRecord::Migration[6.1]
       t.float :ssa
       t.integer :user_id
       t.integer :material_category_id
+      
       t.timestamps
     end
   end

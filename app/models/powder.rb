@@ -1,6 +1,8 @@
 class Powder < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :materialCategory, optional: true
+  has_many :productMaterials
+  has_many :products
   has_one_attached :image
   has_many :comments, as: :commentable
   validates :name, presence: true
