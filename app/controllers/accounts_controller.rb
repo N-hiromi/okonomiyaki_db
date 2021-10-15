@@ -9,13 +9,27 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @products= current_user.products
-    @powders= current_user.powders
-    @liquids= current_user.liquids
-    @seasonings= current_user.seasonings
-    @other_materials= current_user.otherMaterials
-    @bakes= current_user.bakes
-    @cuts= current_user.cuts
-    @other_techniques= current_user.otherTechniques
+    @user= current_user
+    @products= @user.products
+    @powders= @user.powders
+    @liquids= @user.liquids
+    @seasonings= @user.seasonings
+    @other_materials= @user.otherMaterials
+    @bakes= @user.bakes
+    @cuts= @user.cuts
+    @other_techniques= @user.otherTechniques
+  end
+
+  def other_show
+    #binding.pry
+    @user= User.find(params[:id])
+    @products= @user.products
+    @powders= @user.powders
+    @liquids= @user.liquids
+    @seasonings= @user.seasonings
+    @other_materials= @user.otherMaterials
+    @bakes= @user.bakes
+    @cuts= @user.cuts
+    @other_techniques= @user.otherTechniques
   end
 end

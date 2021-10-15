@@ -6,10 +6,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    binding.pry
     if params[:powder_id].present?
       @powder= Powder.find(params[:powder_id])
-      @comment= @powder.comments.new(commnet_params)
+      @comment= @powder.comments.new(comment_params)
       @comment.user_id= current_user.id
       if @comment.save
         flash[:notice] = "コメントしました"
@@ -32,6 +31,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:bake).permit(:comment).merge(user_id: current_user.id)
+    params.permit(:comment).merge(user_id: current_user.id)
   end
 end

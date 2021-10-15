@@ -32,9 +32,13 @@
 </div>
 
 <div class="clear"></div>
-<div class="comment">
+<div class="comment_show">
+  
+</div>
+<div class="comment_form">
   <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
-    <%= f.text_field :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>
+    <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>
+    <%= f.hidden_field :powder_id, :value => @powder.id %>
     <%= f.submit "投稿する", class: "btn btn-primary float-end" %>
     <div class="clear"></div>
   <% end %>
