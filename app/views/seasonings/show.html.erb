@@ -18,3 +18,12 @@
   <%= link_to "情報の変更", edit_seasoning_path, class:"btn btn-primary text-right float-end my-4" %>
 </div>
 <div class="clear"></div>
+
+<div class="comment_form">
+  <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
+    <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>
+    <%= f.hidden_field :seasoning_id, :value => @seasoning.id %>
+    <%= f.submit "投稿する", class: "btn btn-primary float-end mt-5" %>
+    <div class="clear"></div>
+  <% end %>
+</div>

@@ -10,6 +10,7 @@ class PowdersController < ApplicationController
 
   def show
     @powder = Powder.find(params[:id])
+    @comments = @powder.comments.all
   end
 
   def new

@@ -33,13 +33,16 @@
 
 <div class="clear"></div>
 <div class="comment_show">
-  
+  <% @comments.each_with_index do |comment, index| %>
+  <%= index %>
+  <%= comment.comment %> 
+  <% end %> 
 </div>
 <div class="comment_form">
   <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
     <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>
     <%= f.hidden_field :powder_id, :value => @powder.id %>
-    <%= f.submit "投稿する", class: "btn btn-primary float-end" %>
+    <%= f.submit "投稿する", class: "btn btn-primary float-end mt-5" %>
     <div class="clear"></div>
   <% end %>
 </div>
