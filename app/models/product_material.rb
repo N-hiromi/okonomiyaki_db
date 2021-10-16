@@ -3,5 +3,5 @@ class ProductMaterial < ApplicationRecord
   belongs_to :powder, optional: true
   belongs_to :liquid, optional: true
   belongs_to :seasoning, optional: true
-  belongs_to :otherMaterial, optional: true
+  belongs_to :other_material, optional: true
 end

@@ -40,15 +40,15 @@
         </tr>
         <tr>
           <th scope="col">焼き方</th>
-          <td><!--%= link_to @product.bakes.name, bake_path(id: @products.bakes.id) %--></td>
+          <td><%= link_to @product.bake.name, bake_path(id: @product.bake.id) %></td>
         </tr>
         <tr>
           <th scope="col">切り方</th>
-          <td><!--%= link_to @product.cuts.name, cut_path(id: @product.cuts.id) %--></td>
+          <td><%= link_to @product.cut.name, cut_path(id: @product.cut.id) %></td>
         </tr>
         <tr>
           <th scope="col">その他の工法</th>
-          <td><!--%= link_to @product.otherMethods.name, other_method_path(:other_method_id) %--></td>
+          <td><%= link_to @product.other_technique.name, other_technique_path(id: @product.other_technique.id) %></td>
         </tr>
       </tbody>
     </table>
@@ -58,7 +58,6 @@
   <%= link_to "情報の変更", edit_product_path, class:"btn btn-primary text-right float-end my-4" %>
 </div>
 <div class="clear"></div>
-
 <div class="comment_form">
   <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
     <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>

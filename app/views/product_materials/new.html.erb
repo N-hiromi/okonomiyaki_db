@@ -1,0 +1,25 @@
+<%= form_with model: @form, url: "/okonomiyakidb/products/#{params[:product_id]}/product_materials", method: :post, local: true do |form| %>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">登録</th>
+      <th scope="col">材料</th>
+      <th scope="col">重量 (g)</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= form.fields_for :productMmaterials do |f| %>
+    <tr>
+      <td><%= f.check_box :availability %></td>
+      <td><%= f.collection_select :powder_id, Powder.all, :id, :name, {prompt: "粉末を選択"}, {class: "form-control"} %></td>
+      <td><%= f.text_field :powder_weight%></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= form.submit "一括登録" %>
+<% link_to "戻る", :back %>
+<% end %>
+  
+    
+      

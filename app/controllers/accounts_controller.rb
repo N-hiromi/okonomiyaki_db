@@ -9,27 +9,14 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @user= current_user
-    @products= @user.products
-    @powders= @user.powders
-    @liquids= @user.liquids
-    @seasonings= @user.seasonings
-    @other_materials= @user.otherMaterials
-    @bakes= @user.bakes
-    @cuts= @user.cuts
-    @other_techniques= @user.otherTechniques
-  end
-
-  def other_show
-    #binding.pry
     @user= User.find(params[:id])
     @products= @user.products
     @powders= @user.powders
     @liquids= @user.liquids
     @seasonings= @user.seasonings
-    @other_materials= @user.otherMaterials
+    @other_materials= @user.other_materials
     @bakes= @user.bakes
     @cuts= @user.cuts
-    @other_techniques= @user.otherTechniques
+    @other_techniques= @user.other_techniques
   end
 end

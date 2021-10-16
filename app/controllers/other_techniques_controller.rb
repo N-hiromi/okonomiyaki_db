@@ -14,12 +14,12 @@ class OtherTechniquesController < ApplicationController
 
   def new
     @technique_category= TechniqueCategory.find(params[:technique_category_id])
-    @other_technique= @technique_category.otherTechniques.new
+    @other_technique= @technique_category.other_techniques.new
   end
 
   def create
     @technique_category= TechniqueCategory.find(params[:technique_category_id])
-    @other_technique = @technique_category.otherTechniques.new(other_technique_params)
+    @other_technique = @technique_category.other_techniques.new(other_technique_params)
     if @other_technique.save!
         flash[:notice] = "材料を登録しました"
         redirect_to tops_path

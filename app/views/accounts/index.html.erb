@@ -30,7 +30,7 @@
       <tr>
         <th scope="row"><%= index+ 1 %></th>
         <td><%= image_tag user.image if user.image.present? %></td>
-        <td><%= link_to user.name, "/okonomiyakidb/accounts/#{user.id}" %></td>
+        <td><%= link_to user.name, account_path(user.id) %></td>
         <td><%=user.department %></td>
       </tr>
     <% end%>

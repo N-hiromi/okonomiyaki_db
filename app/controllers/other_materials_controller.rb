@@ -1,4 +1,4 @@
-class OtherMaterialsController < ApplicationController
+class other_materialssController < ApplicationController
   def index
     @q = OtherMaterial.ransack(params[:q])
     @materials = @q.result
@@ -14,12 +14,12 @@ class OtherMaterialsController < ApplicationController
 
   def new
     @material_category= MaterialCategory.find(params[:material_category_id])
-    @other_material = @material_category.otherMaterials.new
+    @other_material = @material_category.other_materials.new
   end
 
   def create
     @material_category= MaterialCategory.find(params[:material_category_id])
-    @other_material = @material_category.otherMaterials.new(other_material_params)
+    @other_material = @material_category.other_materials.new(other_material_params)
     if @other_material.save!
         flash[:notice] = "材料を登録しました"
         redirect_to tops_path

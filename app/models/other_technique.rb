@@ -1,7 +1,7 @@
 class OtherTechnique < ApplicationRecord
   belongs_to :user, optional: true
-  belongs_to :techniqueCategory, optional: true
-  has_many :productTechniques
+  belongs_to :technique_category, optional: true
+  has_one :productTechnique
   has_many :products, through: :productTechniques
   has_one_attached :image
   has_many :comments, as: :commentable

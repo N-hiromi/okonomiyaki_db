@@ -19,8 +19,7 @@ class ProductsController < ApplicationController
   def create
     @product = current_user.products.new(product_params)
     if @product.save!
-        flash[:notice] = "製品を登録しました"
-        redirect_to tops_path
+      redirect_to new_product_product_material_path(@product.id)
     else
       flash[:notice] = "登録失敗"
       render action: :new
@@ -50,7 +49,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :cost, :product_material_id, :description, :image, :smell, :taste, :juicy, :app, :bake_id, :cut_id, :othere_method_id).merge(user_id: current_user.id)
+    params.permit(:name, :price, :cost, :product_material_id, :description, :image, :smell, :taste, :juicy, :app, :bake_id, :cut_id, :othere_technique_id).merge(user_id: current_user.id)
   end
 end
 

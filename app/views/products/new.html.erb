@@ -43,16 +43,16 @@
         </tr>
         <tr>
           <th>切り方</th>
-          <td><%= f.collection_select :bake_id, Cut.all, :id, :name, {prompt: "切り方を選択"}, {class: "form-control"} %></td>
+          <td><%= f.collection_select :cut_id, Cut.all, :id, :name, {prompt: "切り方を選択"}, {class: "form-control"} %></td>
         </tr>
         <tr>
           <th>それ以外の工法</th>
-          <td><%= f.collection_select :bake_id, OtherTechnique.all, :id, :name, {prompt: "その他工法を選択"}, {class: "form-control"} %></td>
+          <td><%= f.collection_select :other_technique_id, OtherTechnique.all, :id, :name, {prompt: "その他工法を選択"}, {class: "form-control"} %></td>
         </tr>
     <% end %>
   </table>
   <div class="text-right float-end">
-    <button class="btn btn-primary" type="submit" form="product">登録</button>
+    <button class="btn btn-primary" type="submit" form="product">次へ</button>
   </div>
 </div>
 

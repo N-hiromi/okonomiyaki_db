@@ -6,7 +6,6 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
     }
     root to: 'sessions#log_in'
-    get '/accounts/:id', to: 'accounts#other_show'
     resources :accounts
     resources :tops, only: [:index]
     resources :comments
