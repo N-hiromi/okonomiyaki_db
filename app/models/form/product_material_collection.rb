@@ -1,6 +1,6 @@
 class Form::ProductMaterialCollection < Form::Base
   FORM_COUNT = 10 #ここで、作成したい登録フォームの数を指定
-  attr_accessor :productMaterials 
+  attr_accessor :product_materials 
 
   def initialize(attributes = {})
     super attributes

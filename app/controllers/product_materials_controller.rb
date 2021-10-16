@@ -5,7 +5,6 @@ class ProductMaterialsController < ApplicationController
   end
 
   def create
-    binding.pry
     @form = Form::ProductMaterialCollection.new(product_material_collection_params)
     @form.product_id= params[:product_id]
     @form.save!
@@ -45,6 +44,6 @@ class ProductMaterialsController < ApplicationController
 
   private
   def product_material_collection_params
-    params.require(:form_product_material_collection[:productMaterials]).permit(product_materials_attributes: [:powder_id, :powder_weight])
+    params.require(:form_product_material_collection).permit(product_materials_attributes: [:powder_id, :powder_weight])
   end
 end
