@@ -16,7 +16,7 @@
         </tr>
     <% end %>
   </table>
-  <div class="text-right float-end">
+  <div class="float-end">
     <button class="btn btn-primary" type="submit" form="liquid">登録</button>
     <%= button_to "削除", "/okonomiyakidb/liquids/#{@liquid.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete, class:"btn btn-danger mt-1" %>
   </div>

@@ -4,8 +4,8 @@ class Cut < ApplicationRecord
   has_many :product_techniques
   has_many :products, through: :product_technique
   belongs_to :product, optional: true
-  has_one_attached :image
-  has_many :comments, as: :commentable
+  has_one_attached :image, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   validates :name, presence: true
   validates :cost, presence: true
   validates :warning, presence: true

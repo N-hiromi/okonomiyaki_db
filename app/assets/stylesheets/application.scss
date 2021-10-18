@@ -1,4 +1,7 @@
 @import "accounts.scss";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
 $top_bar:#00533f;
 $side_bar: black;
 $side_hover: #663300;
@@ -43,7 +46,7 @@ html{
       max-height:70%;
     }
     .form_container{
-      margin:0 24%;
+      margin:0 15%;
       display:flex;
       justify-content: space-around;
     }
@@ -157,3 +160,15 @@ main{
   }
 }
 
+//comment_list
+.comment_list{
+  margin-bottom:5%;
+  margin-bottom: 5%;
+  background-color: #FFF;
+  border: solid;
+  border-radius: 5px;
+  border-width: thin;
+  border-color: #afafb0;
+  text-align: left;
+  padding: 10px;
+}

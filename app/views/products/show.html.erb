@@ -54,13 +54,13 @@
     </table>
   </div>
 </div>
-<div class="submit<%= ' no_permitted_user' if @product.user_id != current_user.id %>"></div>
+<div class="submit<%= ' no_permitted_user' if @product.user_id != current_user.id %>">
   <%= link_to "情報の変更", edit_product_path, class:"btn btn-primary text-right float-end my-4" %>
 </div>
 <div class="clear"></div>
 <div class="comment_form">
   <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
-    <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>
+    <%= f.text_area :comment, autofocus: true, class: "form-control mt-5", placeholder: "ここにコメントを記入" %>
     <%= f.hidden_field :product_id, :value => @product.id %>
     <%= f.submit "投稿する", class: "btn btn-primary float-end mt-5" %>
     <div class="clear"></div>

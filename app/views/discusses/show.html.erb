@@ -1,2 +1,27 @@
-<h1>Discusses#show</h1>
-<p>Find me in app/views/discusses/show.html.erb</p>
+<h2><%= @discuss.title %></h2>
+<div class="discuss_text">
+  <div class="comment_list">
+    <div class="icon">
+    </div>
+    <div class="comment_user_name d-inline">
+      <%= User.find(@discuss.user_to_id).name %>
+    </div>
+    <div class="create d-inline-block ms-2">
+      <%= @discuss.created_at.strftime('%Y/%m/%d') %>
+    </div>
+    <div class="comment">
+      <%= @discuss.text %>
+    </div>
+  </div>
+  <%= render "/layouts/comment_list" %>
+</div>
+<div class="comment_form">
+  <%= form_with model: @comment, url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
+  <%= f.text_area :comment, autofocus: true, class: "form-control" %>
+  <%= f.hidden_field :discuss_id, :value => @discuss.id %>
+  <div class="text-right float-end">
+    <%= f.submit "送信", class:"btn btn-primary mt-5" %>
+  </div>
+  <div class="clear"></div>
+  <% end %>
+</div>

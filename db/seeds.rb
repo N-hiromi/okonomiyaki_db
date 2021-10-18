@@ -113,11 +113,12 @@ product1.product_materials.create!(
   seasoning_weight: '1',
   other_material_weight: '1'
 )
-product1.product_technique.create!(
+ProductTechnique.create!(
+  product_id: '1',
   cut_id: '1',
   bake_id: '1',
-  other_technique_id: '1'
-)
+  other_technique_id: '1')
+
 bake1 = Bake.find(1)
 bake1.comments.create!(
   user_id: '1',

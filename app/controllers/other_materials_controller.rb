@@ -1,4 +1,4 @@
-class other_materialssController < ApplicationController
+class OtherMaterialsController < ApplicationController
   def index
     @q = OtherMaterial.ransack(params[:q])
     @materials = @q.result

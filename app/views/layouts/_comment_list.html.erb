@@ -1,0 +1,20 @@
+<% @discuss.comments.each do |comment| %>
+  <div class="comment_list">
+    <div class="icon">
+    </div>
+    <div class="comment_user_name d-inline">
+      <%= User.find(comment.user_id).name %>
+    </div>
+    <div class="create d-inline-block ms-2">
+      <%= comment.created_at.strftime('%Y/%m/%d') %>
+    </div>
+    <div class="comment">
+      <%= comment.comment %>
+    </div>
+    <div class="destroy text-end mt-1">
+      <%= link_to "/okonomiyakidb/comments/#{comment.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -9,8 +9,8 @@ class Product < ApplicationRecord
   has_one :cut, through: :product_technique
   has_one :bake, through: :product_technique
   has_one :other_technique, through: :product_technique
-  has_many_attached :image
-  has_many :comments, as: :commentable
+  has_many_attached :image, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   #validates :name, presence: true
   #validates :cost, presence: true
 

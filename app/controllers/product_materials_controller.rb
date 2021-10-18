@@ -36,12 +36,6 @@ class ProductMaterialsController < ApplicationController
    #   flash[:notice] = "情報を更新しました"
   #end
   
-  #def destroy
-  #  @cut= Cut.find(params[:id]).destroy
-  #  redirect_to account_path
-  #  flash[:notice] = "情報を削除しました"
-  #end
-
   private
   def product_material_collection_params
     params.require(:form_product_material_collection).permit(product_materials_attributes: [:powder_id, :powder_weight])

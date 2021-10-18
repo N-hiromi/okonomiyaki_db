@@ -34,7 +34,12 @@ class CommentsController < ApplicationController
       @other_technique= OtherTechnique.find(params[:other_technique_id])
       @comment= @other_technique.comments.new(comment_params)
       @comment.user_id= current_user.id
+    elsif params[:discuss_id].present?
+      @discuss= Discuss.find(params[:discuss_id])
+      @comment= @discuss.comments.new(comment_params)
+      @comment.user_id= current_user.id
     else
+      #binding.pry
       @product= Product.find(params[:product_id])
       @comment= @product.comments.new(comment_params)
       @comment.user_id= current_user.id
@@ -48,10 +53,10 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def destroy
+    @comment= Comment.find(params[:id]).destroy
+    redirect_to tops_path
+    flash[:notice] = "コメントを削除しました"
   end
 
   private

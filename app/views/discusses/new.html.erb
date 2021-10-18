@@ -1,0 +1,16 @@
+<h2 class="mb-4">質問・相談作成</h2>
+<div class="form text-start">
+    <%= form_with model: @discuss, url:"/okonomiyakidb/accounts/#{params[:account_id]}/discusses", local:true, method: :post do |f| %>
+      <p class="mt-3">タイトル</p>
+      <%= f.text_field :title, autofocus: true, class: "form-control" %>
+      <p class="mt-3 t">相談・提案内容</p>
+      <%= f.text_area :text, autofocus: true, class: "form-control" %>
+      <p class="mt-3">タグ</p>
+      <%= f.text_field :tag, autofocus: true, class: "form-control" %>
+      <%= f.hidden_field :user_from_id, :value => current_user.id %>
+      <%= f.hidden_field :user_to_id, :value => params[:account_id] %>
+      <%= f.submit "送信", class:"btn btn-primary text-right float-end mt-3" %>
+    <% end %>
+</div>
+<div class="clear"></div>
+

@@ -1,1 +1,55 @@
-<h1>Tops#index</h1>
+<h1>質問・相談一覧</h1>
+<h2>受信</h2>
+<% if @to_me_discusses.blank? %>
+  検索結果なし
+<% end %>
+<table class="table<%= ' no_data_table' if @to_me_discusses.blank? %>">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">タイトル</th>
+      <th scope="col">誰から</th>
+      <th scope="col">受信日</th>
+    </tr>
+  </thead>
+  <% @to_me_discusses.each_with_index do |discuss, index| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= index+1 %></th>
+      <td><%= link_to discuss.title, discuss_path(id: discuss.id) %></td>
+      <td><%= User.find(discuss.user_from_id).name %></td>
+      <td><%= discuss.created_at.strftime('%Y/%m/%d') %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>送信</h2>
+<% if @from_me_discusses.blank? %>
+  検索結果なし
+<% end %>
+<table class="table<%= ' no_data_table' if @from_me_discusses.blank? %>">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">タイトル</th>
+      <th scope="col">誰から</th>
+      <th scope="col">受信日</th>
+      <th scope="col">削除</th>
+    </tr>
+  </thead>
+  <% @from_me_discusses.each_with_index do |discuss, index| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= index+1 %></th>
+      <td><%= link_to discuss.title, discuss_path(id: discuss.id) %></td>
+      <td><%= User.find(discuss.user_from_id).name %></td>
+      <td><%= discuss.created_at.strftime('%Y/%m/%d') %></td>
+      <td>
+        <%= link_to "/okonomiyakidb/discusses/#{discuss.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

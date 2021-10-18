@@ -28,12 +28,17 @@
   <%= link_to "アカウント情報の変更", edit_user_registration_path, class:"btn btn-primary text-right float-end my-4" %>
 </div>
 <div class="clear"></div>
+<div class="discuss<%= ' no_permitted_user' if @user.id == current_user.id %>">
+  <%= link_to "相談・提案する", new_account_discuss_path(@user.id), class:"btn btn-success text-right float-end my-4" %>
+</div>
+<div class="clear"></div>
 <div class="user_product">
   <h2 class="">登録リスト</h2>
   <h3 class="">製品</h3>
-  <%= render "/layouts/product_blank" %>
+  <% if @products.blank? %>
+    登録した製品はありません
+  <% end %>
   <table class="table<%= ' no_data_table' if @products.blank? %>">
-  <table class="table">
     <%= render "/layouts/show_product_thead" %>
     <tbody>
 <% @products.each_with_index do |product, index|%>
@@ -56,7 +61,6 @@
   登録した材料はありません
   <% end %>
   <table class="table<%= ' no_data_table' if @powders.blank? and @liquids.blank? and @seasonings.blank? and @other_materials.blank? %>">
-  <table class="table">
     <%= render "/layouts/show_thead" %>
     <tbody>
     <% @powders.each_with_index do |powder, index| %>
