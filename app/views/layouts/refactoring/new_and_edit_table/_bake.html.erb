@@ -1,0 +1,15 @@
+<table class="table">  
+  <tbody>
+    <%= render "../common_technique_form", f: f %>
+    <tr>
+      <th scope="row"><%= Constants::TEMP %></th>
+      <td><%= f.text_field :temp, autofocus: true, class: "form-control" %></td>
+      <td class="align-bottom text-start">℃</td>
+    </tr>
+    <tr>
+      <th scope="row"><%= Constants::TIME %></th>
+      <td><%= f.text_field :time, autofocus: true, class: "form-control" %></td>
+      <td class="align-bottom text-start">h</td>
+    </tr>
+  </tbody>
+</table>
