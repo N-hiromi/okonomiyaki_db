@@ -1,8 +1,9 @@
 <h2 class="mb-4">焼き方登録</h2>
 <div class="form">
   <%= form_with model: @bake, url: {controller: 'cuts', action: 'create'}, local:true, method: :post do |f| %>
-    <%= render "/layouts/refactoring/new_and_edit_table/bake" %>
+    <%= render "/layouts/refactoring/new_and_edit_table/bake", f: f%>
     <%= f.submit "登録", class: "btn btn-primary float-end" %>
     <div class="clear"></div>
   <% end %>
 </div>
+
