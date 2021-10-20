@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-  <%= form.fields_for :productMmaterials do |f| %>
+  <%= form.fields_for :productMaterials do |f| %>
     <tr>
       <td><%= f.check_box :availability %></td>
       <td><%= f.collection_select :powder_id, Powder.all, :id, :name, {prompt: "粉末を選択"}, {class: "form-control"} %></td>

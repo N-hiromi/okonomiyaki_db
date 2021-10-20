@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_033514) do
+ActiveRecord::Schema.define(version: 2021_10_19_005656) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -103,6 +103,24 @@ ActiveRecord::Schema.define(version: 2021_10_15_033514) do
 
   create_table "material_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
+    t.integer "product_id"
+    t.integer "discuss_id"
+    t.integer "powder_id"
+    t.integer "liquid_id"
+    t.integer "seasoning_id"
+    t.integer "other_material_id"
+    t.integer "bake_id"
+    t.integer "cut_id"
+    t.integer "other_technique_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

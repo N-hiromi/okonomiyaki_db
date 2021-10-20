@@ -6,11 +6,11 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
     }
     root to: 'sessions#log_in'
-    resources :accounts, shallow: true do
-      resources :discusses
+    resources :accounts, shallow: true, only: [:index, :show] do
+      resources :discusses, only: [:show, :new, :create, :edit, :destroy]
     end
     resources :tops, only: [:index]
-    resources :comments
+    resources :comments, only: [:create, :destroy]
     resources :products, shallow: true do
       resources :product_materials
       resources :product_techniques

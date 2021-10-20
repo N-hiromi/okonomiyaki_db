@@ -1,4 +1,5 @@
 class ProductMaterialsController < ApplicationController
+  before_action :autheniticate_user
   def new
     @form = Form::ProductMaterialCollection.new
     @product= Product.find(params[:product_id])

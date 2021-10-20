@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = Product.ransack(params[:q])
     @products = @q.result

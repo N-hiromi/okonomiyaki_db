@@ -1,6 +1,6 @@
 class DiscussesController < ApplicationController
+  before_action :autheniticate_user
   def show
-    #binding.pry
     @discuss= Discuss.find(params[:id])
   end
 
@@ -35,6 +35,7 @@ class DiscussesController < ApplicationController
     redirect_to tops_path
     flash[:notice] = "情報を削除しました"
   end
+
   private
   def discuss_params
     params.require(:discuss).permit(:title, :text, :tag, :user_from_id, :user_to_id)

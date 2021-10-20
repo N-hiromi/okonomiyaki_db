@@ -1,4 +1,5 @@
 class CutsController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = Cut.ransack(params[:q])
     @techniques = @q.result

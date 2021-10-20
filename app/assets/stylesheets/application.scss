@@ -45,6 +45,24 @@ html{
       max-width:70%;
       max-height:70%;
     }
+    .icon_image{
+      width:60px;
+      img{
+      width: 100%;
+      border: thin;
+      border-radius: 50%;
+      }
+    }
+    .index_image{
+      width:10%;
+      img{
+        width:100%;
+      }
+    }
+    .show_image img{
+      width:100%;
+    }
+    
     .form_container{
       margin:0 15%;
       display:flex;
@@ -171,4 +189,11 @@ main{
   border-color: #afafb0;
   text-align: left;
   padding: 10px;
+}
+//通知
+.n-circle {
+  position: absolute;
+  padding-left: 1rem;
+  padding-top: 0rem;
+  color: #efa04c;
 }

@@ -1,4 +1,5 @@
 class PowdersController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = Powder.ransack(params[:q])
     @materials = @q.result

@@ -1,12 +1,7 @@
 <div class="show d-flex justify-content-evenly">
-  <div class= "show_image col-3">
-    <% if @powder.image.presence %>
-      <%= image_tag @powder.image %>
-    <% else %>
-      <%= image_tag "27439.png" %>
-    <% end %>
+  <div class= "show_image col-6">
+    <%= render "/layouts/refactoring/no_image", anything: @powder %>
   </div>
-  
   <div class="user_material_table">
     <table class="table">
       <tbody>
@@ -30,7 +25,6 @@
 <div class="submit<%= ' no_permitted_user' if @powder.user_id != current_user.id %>">
   <%= link_to "情報の変更", edit_powder_path, class:"btn btn-primary text-right float-end my-4" %>
 </div>
-
 <div class="clear"></div>
 <div class="comment_show">
   <% @comments.each_with_index do |comment, index| %>
@@ -38,6 +32,7 @@
   <%= comment.comment %> 
   <% end %> 
 </div>
+<%= render "/layouts/refactoring/comment/comment_list", anything: @powder %>
 <div class="comment_form">
   <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
     <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>

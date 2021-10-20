@@ -1,4 +1,5 @@
 class SeasoningsController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = Seasoning.ransack(params[:q])
     @materials = @q.result

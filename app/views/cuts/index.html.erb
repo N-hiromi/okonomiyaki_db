@@ -6,7 +6,7 @@
     <% @techniques.each_with_index do |technique, index| %>
       <tr>
         <th scope="row"><%= index+ 1 %></th>
-        <td><%= image_tag technique.image if technique.image.present? %></td>
+        <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: technique %></td>
         <td><%=link_to technique.name, cut_path(technique.id) %></td>
         <td><%=technique.cost %></td>
         <td><%=technique.created_at.strftime('%Y/%m/%d') %></td>

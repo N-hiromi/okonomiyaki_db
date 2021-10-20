@@ -1,4 +1,5 @@
 class LiquidsController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = Liquid.ransack(params[:q])
     @materials = @q.result

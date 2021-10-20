@@ -1,6 +1,6 @@
 <table class="table">  
   <tbody>
-    <%= render "/layouts/common_technique_form" %>
+    <%= render "/layouts/common_technique_form", f: f %>
     <tr>
       <th scope="row"><%= Constants::TEMP %></th>
       <td><%= f.text_field :temp, autofocus: true, class: "form-control" %></td>

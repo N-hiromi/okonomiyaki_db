@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = User.ransack(params[:q])
     @users = @q.result

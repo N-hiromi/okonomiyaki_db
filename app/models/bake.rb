@@ -6,6 +6,7 @@ class Bake < ApplicationRecord
   has_many_attached :image, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :products
+  has_many :notifications, dependent: :destroy
   validates :name, presence: true
   validates :cost, presence: true
   validates :warning, presence: true

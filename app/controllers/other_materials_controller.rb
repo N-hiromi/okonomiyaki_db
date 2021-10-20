@@ -1,4 +1,5 @@
 class OtherMaterialsController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = OtherMaterial.ransack(params[:q])
     @materials = @q.result

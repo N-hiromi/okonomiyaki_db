@@ -1,4 +1,5 @@
 class BakesController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = Bake.ransack(params[:q])
     @techniques = @q.result

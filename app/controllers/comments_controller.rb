@@ -1,10 +1,5 @@
 class CommentsController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
+  before_action :autheniticate_user
   def create
     if params[:powder_id].present?
       @powder= Powder.find(params[:powder_id])
@@ -39,7 +34,6 @@ class CommentsController < ApplicationController
       @comment= @discuss.comments.new(comment_params)
       @comment.user_id= current_user.id
     else
-      #binding.pry
       @product= Product.find(params[:product_id])
       @comment= @product.comments.new(comment_params)
       @comment.user_id= current_user.id

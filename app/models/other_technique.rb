@@ -5,6 +5,7 @@ class OtherTechnique < ApplicationRecord
   has_many :products, through: :productTechniques
   has_one_attached :image, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   validates :name, presence: true
   validates :cost, presence: true
   validates :warning, presence: true

@@ -1,12 +1,7 @@
 <div class="show d-flex justify-content-evenly">
-  <div class= "show_image col-3">
-    <% if @other_technique.image.presence %>
-      <%= image_tag @other_technique.image %>
-    <% else %>
-      <%= image_tag "27439.png" %>
-    <% end %>
+  <div class= "show_image col-6">
+    <%= render "/layouts/refactoring/no_image", anything: @other_technique %>
   </div>
-  
   <div class="user_technique_table">
     <table class="table">
       <tbody>
@@ -21,3 +16,12 @@
 </div>
 <%= link_to "情報の変更", edit_other_technique_path, class:"btn btn-primary text-right float-end my-4" %>
 <div class="clear"></div>
+<%= render "/layouts/refactoring/comment/comment_list", anything: @other_technique %>
+<div class="comment_form">
+  <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
+    <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>
+    <%= f.hidden_field :other_technique_id, :value => @other_technique.id %>
+    <%= f.submit "投稿する", class: "btn btn-primary float-end mt-5" %>
+    <div class="clear"></div>
+  <% end %>
+</div>

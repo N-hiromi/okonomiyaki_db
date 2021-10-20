@@ -1,7 +1,7 @@
 <h2>プロフィール</h2>
 <div class="account_container d-flex">
   <div class="show_icon col-3">
-    
+    <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: @user %></td>
   </div>
   <table class="table">
     <tbody>
@@ -9,17 +9,13 @@
         <th scope="row"><%= Constants::NAME %></th>
         <td><%= @user.name %></td>
       </tr>
-      <tr class="submit<%= ' no_permitted_user' if @user.id != current_user.id %>">
+      <tr class="<%= ' no_permitted_user' if @user.id != current_user.id %>">
         <th scope="row"><%= Constants::EMAIL %></th>
         <td><%= @user.email %></td>
       </tr>
       <tr>
         <th scope="row"><%= Constants::DEPARTMENT %></th>
         <td><%= @user.department %></td>
-      </tr>
-      <tr class="submit<%= ' no_permitted_user' if @user.id != current_user.id %>">
-        <th scope="row"><%= Constants::PASSWORD %></th>
-        <td><%= link_to "お忘れの方はこちら", edit_user_password_path %></td>
       </tr>
     </tbody>
   </table>
@@ -44,7 +40,7 @@
 <% @products.each_with_index do |product, index|%>
       <tr>
         <th scope="row"><%= index+ 1 %></th>
-        <td><%= image_tag product.image if product.image.present? %></td>
+        <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: product %></td>
         <td><%=link_to product.name, product_path(product.id) %></td>
         <td><%=product.price %></td>
         <td><%=product.cost %></td>
@@ -66,7 +62,7 @@
     <% @powders.each_with_index do |powder, index| %>
       <tr>
         <th scope="row"><%= index+ 1 %></th>
-        <td><%= image_tag powder.image if powder.image.present? %></td>
+        <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: powder %></td>
         <td><%=link_to powder.name, powder_path(powder.id)  %></td>
         <td><%=powder.cost %></td>
         <td><%=powder.created_at.strftime('%Y/%m/%d') %></td>
@@ -77,7 +73,7 @@
     <% @liquids.each_with_index do |liquid, index| %>
       <tr>
         <th scope="row"><%= index+ @liquids.size + 1 %></th>
-        <td><%= image_tag liquid.image if liquid.image.present? %></td>
+        <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: liquid %></td>
         <td><%=link_to liquid.name, liquid_path(liquid.id)  %></td>
         <td><%=liquid.cost %></td>
         <td><%=liquid.created_at.strftime('%Y/%m/%d') %></td>
@@ -87,7 +83,7 @@
       <% @seasonings.each_with_index do |seasoning, index| %>
         <tr>
           <th scope="row"><%= index+ @powders.size+ @liquids.size + 1 %></th>
-          <td><%= image_tag seasoning.image if seasoning.image.present? %></td>
+          <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: seasoning %></td>
           <td><%=link_to seasoning.name, seasoning_path(seasoning.id)  %></td>
           <td><%=seasoning.cost %></td>
           <td><%=seasoning.created_at.strftime('%Y/%m/%d') %></td>
@@ -97,7 +93,7 @@
       <% @other_materials.each_with_index do |other_material, index| %>
         <tr>
           <th scope="row"><%= index+ @powders.size+ @liquids.size+ @seasonings.size + 1 %></th>
-          <td><%= image_tag other_material.image if other_material.image.present? %></td>
+          <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: other_material %></td>
           <td><%=link_to other_material.name, other_material_path(other_material.id)  %></td>
           <td><%=other_material.cost %></td>
           <td><%=other_material.created_at.strftime('%Y/%m/%d') %></td>
@@ -118,7 +114,7 @@
       <% @bakes.each_with_index do |bake, index| %>
         <tr>
           <th scope="row"><%= index+ 1 %></th>
-          <td><%= image_tag bake.image if bake.image.present? %></td>
+          <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: bake %></td>
           <td><%=link_to bake.name, bake_path(bake.id)  %></td>
           <td><%=bake.cost %></td>
           <td><%=bake.created_at.strftime('%Y/%m/%d') %></td>
@@ -128,7 +124,7 @@
       <% @cuts.each_with_index do |cut, index| %>
         <tr>
           <th scope="row"><%= index+ @bakes.size + 1 %></th>
-          <td><%= image_tag cut.image if cut.image.present? %></td>
+          <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: cut %></td>
           <td><%=link_to cut.name, cut_path(cut.id)  %></td>
           <td><%=cut.cost %></td>
           <td><%=cut.created_at.strftime('%Y/%m/%d') %></td>
@@ -138,7 +134,7 @@
       <% @other_techniques.each_with_index do |other_technique, index| %>
         <tr>
           <th scope="row"><%= index+ @other_techniques.size+ @other_techniques.size + 1 %></th>
-          <td><%= image_tag other_technique.image if other_technique.image.present? %></td>
+          <td class="index_image"><%= render "/layouts/refactoring/no_image", anything: other_technique %></td>
           <td><%=link_to other_technique.name, other_technique_path(other_technique.id)  %></td>
           <td><%=other_technique.cost %></td>
           <td><%=other_technique.created_at.strftime('%Y/%m/%d') %></td>

@@ -22,14 +22,17 @@
             <ul class="navbar-nav .ml-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <!--img src="<!--%= current_user.image %-->" alt="icon image"-->
-                <%= current_user.name %>
+                  <div class="icon_image d-inline-block">
+                    <%= render "/layouts/refactoring/no_image", anything: current_user %>
+                  </div>
+                    <%= current_user.name %>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><%= link_to "Profile", account_path(current_user.id), class:"dropdown-item" %></li>
                   <li><%= link_to "help", "", class:"dropdown-item" %></li>
                   <li><%= link_to "logout", destroy_user_session_path, class:"dropdown-item", method: :delete %></li>
                 </ul>
+              </li>
               </li>
             </ul>
           </div>

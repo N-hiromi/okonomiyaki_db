@@ -1,12 +1,7 @@
 <div class="show d-flex">
-  <div class= "show_image" style="width:60%;">
-    <% if @liquid.image.presence %>
-      <%= image_tag @liquid.image %>
-    <% else %>
-      <%= image_tag "27439.png" %>
-    <% end %>
+  <div class= "show_image col-6">
+    <%= render "/layouts/refactoring/no_image", anything: @liquid %>
   </div>
-  
   <div class="user_material_table">
     <table class="table">
       <tbody>
@@ -27,7 +22,7 @@
   <%= link_to "情報の変更", edit_liquid_path, class:"btn btn-primary text-right float-end my-4" %>
 </div>
 <div class="clear"></div>
-
+<%= render "/layouts/refactoring/comment/comment_list", anything: @liquid %>
 <div class="comment_form">
   <%= form_with url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
     <%= f.text_area :comment, autofocus: true, class: "form-control", placeholder: "ここにコメントを記入" %>

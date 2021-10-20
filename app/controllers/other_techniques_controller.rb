@@ -1,4 +1,5 @@
 class OtherTechniquesController < ApplicationController
+  before_action :autheniticate_user
   def index
     @q = OtherTechnique.ransack(params[:q])
     @techniques = @q.result

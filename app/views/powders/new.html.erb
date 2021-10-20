@@ -1,7 +1,6 @@
 <h2 class="mb-4">粉末材料登録</h2>
 <div class="form">
   <table class="table">
-  
     <%= form_with model: @powder, url: {controller: 'powders', action: 'create'},local:true, id: "powder", method: :post do |f| %>
       <tbody>
         <%= render "/layouts/common_material_form", f: f %>

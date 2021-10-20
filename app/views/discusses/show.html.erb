@@ -13,7 +13,7 @@
       <%= @discuss.text %>
     </div>
   </div>
-  <%= render "/layouts/comment_list" %>
+  <%= render "/layouts/refactoring/comment/comment_list", anything: @discuss %>
 </div>
 <div class="comment_form">
   <%= form_with model: @comment, url: {controller: 'comments', action: 'create'},local:true, method: :post do |f| %>
