@@ -2,11 +2,11 @@ class BakesController < ApplicationController
   before_action :autheniticate_user
   def index
     @q = Bake.ransack(params[:q])
-    @techniques = @q.result
+    @bakes = @q.result
     if @q.blank?
-      @techniques = Bake.all
+      @bakes = Bake.all
     end
-    @count= @techniques.count
+    @count= @bakes.count
   end
 
   def show

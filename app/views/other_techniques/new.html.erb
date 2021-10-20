@@ -1,18 +1,3 @@
-<h2 class="mb-4">その他工法登録</h2>
-<div class="form">
-  <table class="table">
-    <%= form_with model: @other_technique, url: {controller: 'other_techniques', action: 'create'},local:true, id: "other_technique", method: :post do |f| %>
-      <tbody>
-        <%= render "/layouts/common_technique_form", f: f %>
-        <tr>
-          <th scope="row"><%= Constants::TIME %></th>
-          <td><%= f.text_field :time, autofocus: true, class: "form-control" %></td>
-          <td class="align-bottom text-start">h</td>
-        </tr>
-    <% end %>
-  </table>
-  <div class="text-right float-end">
-    <button class="btn btn-primary" type="submit" form="other_technique">登録</button>
-  </div>
-</div>
-
+<%= form_with model: @other_technique, url: {controller: 'other_techniques', action: 'create'}, local:true, method: :post do |f| %>
+  <%= render "/layouts/refactoring/new_and_edit_table/other_technique", f: f%>
+<% end %>

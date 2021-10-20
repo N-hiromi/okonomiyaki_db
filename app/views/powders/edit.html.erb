@@ -1,29 +1,6 @@
-<h2 class="mb-4">粉末材料編集</h2>
-<div class="form">
-  <table class="table">
-    <%= form_with model: @powder, url: {controller: 'powders', action: 'update'},local:true, id: "powder", method: :patch do |f| %>
-      <tbody>
-        <%= render "/layouts/common_material_form", f: f %>
-        <tr>
-          <th scope="row"><%= Constants::PARTICLE_SIZE %></th>
-          <td><%= f.text_field :particle_size, autofocus: true, class: "form-control" %></td>
-          <td class="align-bottom text-start">nm</td>
-        </tr>
-        <tr>
-          <th scope="row"><%= Constants::DENSITY %></th>
-          <td><%= f.text_field :density, autofocus: true, class: "form-control" %></td>
-          <td class="align-bottom text-start">g/cm3</td>
-        </tr>
-        <tr>
-          <th scope="row"><%= Constants::SSA %></th>
-          <td><%= f.text_field :ssa, autofocus: true, class: "form-control" %></td>
-          <td class="align-bottom text-start">m2/g</td>
-        </tr>
-    <% end %>
-  </table>
-  <div class="float-end">
-    <button class="btn btn-primary" type="submit" form="powder">登録</button>
-    <%= button_to "削除", "/okonomiyakidb/powders/#{@powder.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete, class:"btn btn-danger mt-1" %>
-  </div>
+<%= form_with model: @powder, url: {controller: 'powders', action: 'update'}, local:true, method: :post do |f| %>
+  <%= render "/layouts/refactoring/new_and_edit_table/powder", f: f%>
+<% end %>
+<div class="float-end">
+  <%= button_to "削除", "/okonomiyakidb/powders/#{@powder.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete, class:"btn btn-danger mt-1" %>
 </div>
-

@@ -1,24 +1,6 @@
-<h2 class="mb-4">焼き方登録</h2>
-<div class="form">
-  <table class="table">
-    <%= form_with model: @bake, url: {controller: 'bakes', action: 'update'},local:true, id: "bake", method: :patch do |f| %>
-      <tbody>
-        <%= render "/layouts/common_technique_form", f: f %>
-        <tr>
-          <th scope="row"><%= Constants::TEMP %></th>
-          <td><%= f.text_field :temp, autofocus: true, class: "form-control" %></td>
-          <td class="align-bottom text-start">℃</td>
-        </tr>
-        <tr>
-          <th scope="row"><%= Constants::TIME %></th>
-          <td><%= f.text_field :time, autofocus: true, class: "form-control" %></td>
-          <td class="align-bottom text-start">h</td>
-        </tr>
-    <% end %>
-  </table>
-  <div class="float-end">
-    <button class="btn btn-primary" type="submit" form="bake">登録</button>
-    <%= button_to "削除", "/okonomiyakidb/bakes/#{@bake.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete, class:"btn btn-danger mt-1" %>
-  </div>
+<%= form_with model: @bake, url: {controller: 'bakes', action: 'update'}, local:true, method: :post do |f| %>
+  <%= render "/layouts/refactoring/new_and_edit_table/bake", f: f%>
+<% end %>
+<div class="float-end">
+  <%= button_to "削除", "/okonomiyakidb/bakes/#{@bake.id}", data: { confirm: "削除してもよろしいですか?" }, method: :delete, class:"btn btn-danger mt-1" %>
 </div>
-

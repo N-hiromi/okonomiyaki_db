@@ -1,0 +1,13 @@
+<h2 class="mb-4">その他工法登録</h2>
+  <table class="table">  
+    <tbody>
+      <%= render "/layouts/common_technique_form", f: f %>
+      <tr>
+          <th scope="row"><%= Constants::TIME %></th>
+          <td><%= f.text_field :time, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">h</td>
+        </tr>
+    </tbody>
+  </table>
+  <%= f.submit "登録", class: "btn btn-primary float-end" %>
+<div class="clear"></div>

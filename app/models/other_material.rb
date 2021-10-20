@@ -5,7 +5,6 @@ class OtherMaterial < ApplicationRecord
   has_many :products, through: :product_materials
   has_one_attached :image
   has_many :comments, as: :commentable, dependent: :destroy
-  has_many :notifications, dependent: :destroy
   validates :name, presence: true
   validates :cost, presence: true
   validates :warning, presence: true

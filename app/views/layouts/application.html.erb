@@ -14,6 +14,9 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top top-nav">
         <div class="container-fluid">
+          <div class="icon_image d-inline-block">
+            <%= image_tag "hato.png" %>
+          </div>
           <%= link_to "Okonomiyakidb",tops_path, class:"navbar-brand" %>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,7 +32,6 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><%= link_to "Profile", account_path(current_user.id), class:"dropdown-item" %></li>
-                  <li><%= link_to "help", "", class:"dropdown-item" %></li>
                   <li><%= link_to "logout", destroy_user_session_path, class:"dropdown-item", method: :delete %></li>
                 </ul>
               </li>

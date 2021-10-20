@@ -1,0 +1,18 @@
+<h2 class="mb-4">切り方登録</h2>
+  <table class="table">  
+    <tbody>
+      <%= render "/layouts/common_technique_form", f: f %>
+      <tr>
+          <th scope="row"><%= Constants::WIDTH %></th>
+          <td><%= f.text_field :width, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">mm</td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Constants::HEIGHT %></th>
+          <td><%= f.text_field :height, autofocus: true, class: "form-control" %></td>
+          <td class="align-bottom text-start">mm</td>
+        </tr>
+    </tbody>
+  </table>
+  <%= f.submit "登録", class: "btn btn-primary float-end" %>
+<div class="clear"></div>

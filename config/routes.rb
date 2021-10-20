@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   scope "/okonomiyakidb" do
-    get "tops/help"
     devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions',

@@ -1,4 +1,3 @@
-@import "accounts.scss";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
@@ -82,6 +81,8 @@ html{
 //top_nav
 .top-nav{
   background-color:$top_bar;
+  padding-top:0;
+  padding-bottom:0;
 }
 .main_side_bar{
   display:flex;
