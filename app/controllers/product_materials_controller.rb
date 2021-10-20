@@ -2,12 +2,12 @@ class ProductMaterialsController < ApplicationController
   before_action :autheniticate_user
   def new
     @form = Form::ProductMaterialCollection.new
-    @product= Product.find(params[:product_id])
+    @product= Product.find(params["product_id"])
   end
 
   def create
     @form = Form::ProductMaterialCollection.new(product_material_collection_params)
-    @form.product_id= params[:product_id]
+    @form.product_id= params["product_id"]
     @form.save!
       redirect_to products_path, notice: "商品を登録しました"
     #else
