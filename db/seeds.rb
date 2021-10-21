@@ -100,7 +100,7 @@ user1.other_materials.create!(
   warning: '重量物注意',
   material_category_id: '4'
 )
-  #user.image.attach(io: File.open(Rails.root.join('app/assets/images/nav_icon_images/27439.png')),filename: '27439.png')
+user1.image.attach(io: File.open(Rails.root.join('app/assets/images/nav_icon_images/27439.png')),filename: '27439.png')
 product1= Product.find(1)
 product1.product_materials.create!(
   product_id: '1',

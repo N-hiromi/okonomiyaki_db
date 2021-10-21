@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       registrations: 'users/registrations',
       sessions: 'users/sessions',
     }
-    root to: 'sessions#log_in'
+    root to: 'tops#index'
     resources :accounts, shallow: true, only: [:index, :show] do
       resources :discusses, only: [:show, :new, :create, :edit, :destroy]
     end
