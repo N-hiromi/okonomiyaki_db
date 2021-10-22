@@ -1,7 +1,6 @@
 class Seasoning < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :material_category, optional: true
-  has_many :product_materials
   has_many :products
   has_one_attached :image
   has_many :comments, as: :commentable

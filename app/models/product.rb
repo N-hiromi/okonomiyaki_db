@@ -1,18 +1,23 @@
 class Product < ApplicationRecord
   belongs_to :user, optional: true
-  has_many :product_materials
-  has_many :powders, through: :product_materials
-  has_many :liquids, through: :product_materials
-  has_many :seasonings, through: :product_materials
-  has_many :other_materials, through: :product_materials
-  has_one :product_technique
-  has_one :cut, through: :product_technique
-  has_one :bake, through: :product_technique
-  has_one :other_technique, through: :product_technique
-  has_many_attached :image, dependent: :destroy
+  has_one :powder
+  has_one :liquid
+  has_one :seasoning
+  has_one :other_material
+  has_one :cut
+  has_one :bake
+  has_one :other_technique
+  has_one_attached :image, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
-  #validates :name, presence: true
-  #validates :cost, presence: true
+  validates :name, presence: true
+  validates :cost, presence: true
+  validates :bake_id, presence: true
+  validates :cut_id, presence: true
+  validates :other_technique_id, presence: true
+  validates :powder_id, presence: true
+  validates :liquid_id, presence: true
+  validates :seasoning_id, presence: true
+  validates :other_material_id, presence: true
 
   def self.ransackable_attributes(auth_object = nil)
     %w[name cost]

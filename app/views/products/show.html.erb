@@ -35,19 +35,46 @@
         </tr>
         <tr>
           <th scope="col">焼き方</th>
-          <td><%= link_to @product.bake.name, bake_path(id: @product.bake.id) %></td>
+          <td><%= link_to Bake.find(@product.bake_id).name, bake_path(id: @product.bake_id) %></td>
         </tr>
         <tr>
           <th scope="col">切り方</th>
-          <td><%= link_to @product.cut.name, cut_path(id: @product.cut.id) %></td>
+          <td><%= link_to Cut.find(@product.cut_id).name, cut_path(id: @product.cut_id) %></td>
         </tr>
         <tr>
           <th scope="col">その他の工法</th>
-          <td><%= link_to @product.other_technique.name, other_technique_path(id: @product.other_technique.id) %></td>
+          <td><%= link_to OtherTechnique.find(@product.other_technique_id).name, other_technique_path(id: @product.other_technique_id) %></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>材料名</th>
+          <th>重量 (g)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= link_to Powder.find(@product.powder_id).name, powder_path(id: @product.powder_id) %></td>
+          <td><%= @product.powder_weight %>g</td>
+        </tr>
+        <tr>
+          <td><%= link_to Liquid.find(@product.liquid_id).name, liquid_path(id: @product.liquid_id) %></td>
+          <td><%= @product.liquid_weight %>g</td>
+        </tr>
+        <tr>
+          <td><%= link_to Seasoning.find(@product.seasoning_id).name, seasoning_path(id: @product.seasoning_id) %></td>
+          <td><%= @product.seasoning_weight %>g</td>
+        </tr>
+        <tr>
+          <td><%= link_to OtherMaterial.find(@product.other_material_id).name, other_material_path(id: @product.other_material_id) %></td>
+          <td><%= @product.other_material_weight %>g</td>
         </tr>
       </tbody>
     </table>
   </div>
+  
 </div>
 <div class="submit<%= ' no_permitted_user' if @product.user_id != current_user.id %>">
   <%= link_to "情報の変更", edit_product_path, class:"btn btn-primary text-right float-end my-4" %>

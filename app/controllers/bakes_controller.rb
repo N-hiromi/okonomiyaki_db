@@ -22,7 +22,7 @@ class BakesController < ApplicationController
     @technique_category= TechniqueCategory.find(params[:technique_category_id])
     @bake = @technique_category.bakes.new(bake_params)
     if @bake.save
-        flash[:notice] = "材料を登録しました"
+        flash[:notice] = "工法を登録しました"
         redirect_to tops_path
     else
       flash[:notice] = "登録失敗"

@@ -1,4 +1,4 @@
-<%= form_with model: @other_technique, url: {controller: 'other_techniques', action: 'update'}, local:true, method: :post do |f| %>
+<%= form_with model: @other_technique, url: {controller: 'other_techniques', action: 'update'}, local:true, method: :patch do |f| %>
   <%= render "/layouts/refactoring/new_and_edit_table/other_technique", f: f%>
 <% end %>
 <div class="float-end">

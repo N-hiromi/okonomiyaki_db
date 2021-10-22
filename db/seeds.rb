@@ -35,8 +35,17 @@ user1.products.create!(
   taste: '80',
   juicy: '60',
   app: '70',
-  product_material_id: '1',
-  product_technique_id: '1'
+  cut_id: '1',
+  bake_id: '1',
+  powder_id: '1',
+  liquid_id: '1',
+  other_technique_id: '1',
+  seasoning_id: '1',
+  other_material_id: '1',
+  powder_weight: '1',
+  liquid_weight: '1',
+  seasoning_weight: '1',
+  other_material_weight: '1'
 )
 user1.bakes.create!(
   name: '軽く焼く',
@@ -100,25 +109,8 @@ user1.other_materials.create!(
   warning: '重量物注意',
   material_category_id: '4'
 )
-user1.image.attach(io: File.open(Rails.root.join('app/assets/images/nav_icon_images/27439.png')),filename: '27439.png')
-product1= Product.find(1)
-product1.product_materials.create!(
-  product_id: '1',
-  powder_id: '1',
-  liquid_id: '1',
-  seasoning_id: '1',
-  other_material_id: '1',
-  powder_weight: '1',
-  liquid_weight: '1',
-  seasoning_weight: '1',
-  other_material_weight: '1'
-)
-ProductTechnique.create!(
-  product_id: '1',
-  cut_id: '1',
-  bake_id: '1',
-  other_technique_id: '1')
-
+user1.image.attach(io: File.open(Rails.root.join('app/assets/images/27439.png')),filename: '27439.png')
+Product.find(1).image.attach(io: File.open(Rails.root.join('app/assets/images/27439.png')),filename: '27439.png')
 bake1 = Bake.find(1)
 bake1.comments.create!(
   user_id: '1',

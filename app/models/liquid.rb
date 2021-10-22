@@ -1,8 +1,6 @@
 class Liquid < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :material_category, optional: true
-  has_many :product_materials
-  has_many :products, through: :product_materials
   has_one_attached :image
   has_many :comments, as: :commentable, dependent: :destroy
   validates :name, presence: true

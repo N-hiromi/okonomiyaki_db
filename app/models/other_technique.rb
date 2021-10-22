@@ -1,8 +1,6 @@
 class OtherTechnique < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :technique_category, optional: true
-  has_one :productTechnique
-  has_many :products, through: :productTechniques
   has_one_attached :image, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   validates :name, presence: true

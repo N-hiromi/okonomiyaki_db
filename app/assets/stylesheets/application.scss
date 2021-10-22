@@ -92,12 +92,11 @@ html{
 .side_bar{
   width:15%;
   background-color: $side_bar;
-  margin-top:55px;
   ul.ddmenu {
     height: 100vh;
     padding:0;
     text-align: center;
-    margin-top:25px; //_alert.scssと干渉して子要素が出てこないから
+    margin-top:100px; //_alert.scssと干渉して子要素が出てこないから
     li {
       position: relative;
       padding-top:15%;
@@ -164,7 +163,7 @@ main{
   }
   //no_bar.html.erb適用時
   .login_message{
-    margin-top:6%;
+    margin-top:7%;
   }
   .no_bar_main_container{
     text-align: center;

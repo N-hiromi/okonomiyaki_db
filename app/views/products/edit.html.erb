@@ -1,8 +1,7 @@
 <h2 class="mb-4">製品登録</h2>
 <div class="form">
-  <%= form_with model: @product, url: {controller: 'products', action: 'create'},local:true, method: :post do |f| %>
+  <%= form_with model: @product, url: {controller: 'products', action: 'update'},local:true, method: :patch do |f| %>
     <%= render "/layouts/refactoring/new_and_edit_table/product", f: f%>
   <% end %> 
   <div class="clear"></div>
 </div>
-

@@ -19,8 +19,9 @@ class ProductsController < ApplicationController
   
   def create
     @product = current_user.products.new(product_params)
-    if @product.save!
-      redirect_to new_product_product_material_path(@product.id)
+    if @product.save
+      redirect_to tops_path
+      flash[:notice] = "登録完了"
     else
       flash[:notice] = "登録失敗"
       render action: :new
@@ -32,8 +33,8 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @powder= Powder.find(params[:id])
-    if @powder.update(powder_params)
+    @product= Product.find(params[:id])
+    if @product.update(product_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
     else
@@ -50,7 +51,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.permit(:name, :price, :cost, :product_material_id, :description, :image, :smell, :taste, :juicy, :app, :bake_id, :cut_id, :othere_technique_id).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :price, :cost, :product_material_id, :description, :image, :smell, :taste, :juicy, :app, :bake_id, :cut_id, :other_technique_id, :powder_id, :liquid_id, :other_material_id, :seasoning_id, :powder_weight, :liquid_weight, :seasoning_weight, :other_material_weight).merge(user_id: current_user.id)
   end
 end
 

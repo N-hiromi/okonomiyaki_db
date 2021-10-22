@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_041442) do
+ActiveRecord::Schema.define(version: 2021_10_04_075526) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -50,12 +50,6 @@ ActiveRecord::Schema.define(version: 2021_10_20_041442) do
     t.float "time"
     t.integer "user_id"
     t.integer "technique_category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "bases", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -113,24 +107,6 @@ ActiveRecord::Schema.define(version: 2021_10_20_041442) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "visitor_id", null: false
-    t.integer "visited_id", null: false
-    t.integer "product_id"
-    t.integer "discuss_id"
-    t.integer "powder_id"
-    t.integer "liquid_id"
-    t.integer "seasoning_id"
-    t.integer "other_material_id"
-    t.integer "bake_id"
-    t.integer "cut_id"
-    t.integer "other_technique_id"
-    t.string "action", default: "", null: false
-    t.boolean "checked", default: false, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "other_materials", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.float "cost"
@@ -169,35 +145,6 @@ ActiveRecord::Schema.define(version: 2021_10_20_041442) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "product_material_collections", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "product_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "product_materials", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "powder_id"
-    t.integer "liquid_id"
-    t.integer "seasoning_id"
-    t.integer "other_material_id"
-    t.float "powder_weight"
-    t.float "liquid_weight"
-    t.float "seasoning_weight"
-    t.float "other_material_weight"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "product_techniques", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "cut_id"
-    t.integer "bake_id"
-    t.integer "other_technique_id"
-    t.integer "product_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -210,6 +157,17 @@ ActiveRecord::Schema.define(version: 2021_10_20_041442) do
     t.integer "taste"
     t.integer "juicy"
     t.integer "app"
+    t.integer "bake_id"
+    t.integer "cut_id"
+    t.integer "other_technique_id"
+    t.integer "powder_id"
+    t.integer "liquid_id"
+    t.integer "seasoning_id"
+    t.integer "other_material_id"
+    t.integer "powder_weight"
+    t.integer "liquid_weight"
+    t.integer "seasoning_weight"
+    t.integer "other_material_weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
