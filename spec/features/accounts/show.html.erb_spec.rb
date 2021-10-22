@@ -2,13 +2,13 @@ require 'rails_helper'
 RSpec.feature "accounts/show.html.erb", type: :feature do
   feature "showについてテスト" do
     before do
-      binding.pry
+      #binding.pry
       @user1= FactoryBot.create(:user, :a)
       @product1= FactoryBot.create(:product, :a)
-      visit account_path(@user1.id)
       sign_in @user1
+      visit account_path(@user1.id)
     end
-
+    binding.pry
     scenario "@user1の情報が表示されているか" do
       expect(page).to have_content @user1.name
       expect(page).to have_content @user1.email
