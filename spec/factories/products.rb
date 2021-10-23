@@ -3,8 +3,8 @@ FactoryBot.define do
     association :user
     trait :a do
       id { 1 }
-      name { "MyString" }
-      price { 100 }
+      name { "Product1" }
+      price { "100" }
       cost { 20 }
       description { "Mytext" }
       app { 2 }
@@ -27,7 +27,7 @@ FactoryBot.define do
 
     trait :b do
       id { 2 }
-      name { "MyString" }
+      name { "Product2" }
       price { 100 }
       cost { 20 }
       description { "Mytext" }
