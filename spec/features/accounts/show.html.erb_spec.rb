@@ -1,7 +1,8 @@
 require 'rails_helper'
 RSpec.feature "accounts/show.html.erb", type: :feature do
+  #binding.pry
   feature "showについてテスト" do
-    let!(:user) { create(:user, :a) }
+    let!(:user) { create(:user) }
     let!(:bake) { create(:bake, :a) }
     let!(:cut) { create(:cut, :a) }
     let!(:other_technique) { create(:other_technique, :a) }
