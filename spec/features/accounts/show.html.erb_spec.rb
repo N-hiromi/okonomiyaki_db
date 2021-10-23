@@ -1,30 +1,37 @@
 require 'rails_helper'
 RSpec.feature "accounts/show.html.erb", type: :feature do
   feature "showについてテスト" do
+    let!(:user) { create(:user, :a) }
+    let!(:bake) { create(:bake, :a) }
+    let!(:cut) { create(:cut, :a) }
+    let!(:other_technique) { create(:other_technique, :a) }
+    let!(:powder) { create(:powder, :a) }
+    let!(:liquid) { create(:liquid, :a) }
+    let!(:seasoning) { create(:seasoning, :a) }
+    let!(:other_material) { create(:other_material, :a) }
+    let!(:product) { create(:product, :a, bake_id: bake.id, user_id: user.id) }
+
     before do
-      #binding.pry
-      @user1= FactoryBot.create(:user, :a)
-      @product1= FactoryBot.create(:product, :a)
-      sign_in @user1
-      visit account_path(@user1.id)
-    end
-    binding.pry
-    scenario "@user1の情報が表示されているか" do
-      expect(page).to have_content @user1.name
-      expect(page).to have_content @user1.email
-      expect(page).to have_content @user1.department
+      sign_in user
+      visit account_path(user.id)
     end
 
-    scenario "@user1の登録したproduct情報が表示されているか" do
-      expect(page).to have_content @product1.name
-      expect(page).to have_content @product1.price
-      expect(page).to have_content @product1.created_at.strftime('%Y/%m/%d')
-      expect(page).to have_content @product1.updated_at.strftime('%Y/%m/%d')
+    scenario "is displayed user informations" do
+      expect(page).to have_content user.name
+      expect(page).to have_content user.email
+      expect(page).to have_content user.department
     end
 
-    scenario "@user1の登録したproduct名をclickすると各showページへ飛べるか" do
-      click_link @product1.name
-      expect(page).to have_current_path product_path(id: @product1.id)
+    scenario "is displayed users products" do
+      expect(page).to have_content product.name
+      expect(page).to have_content product.price
+      expect(page).to have_content product.created_at.strftime('%Y/%m/%d')
+      expect(page).to have_content product.updated_at.strftime('%Y/%m/%d')
+    end
+
+    scenario 'have link to products#show' do
+      click_link product1.name, match: :first
+      expect(page).to have_current_path product_path(id: product.id)
     end
   end
 end

@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :powder do
+    association :user
     trait :a do
       id { 1 }
       name { "MyString" }
