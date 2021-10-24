@@ -30,7 +30,9 @@ RSpec.feature "accounts/show.html.erb", type: :feature do
     end
 
     scenario 'have link to products#show' do
+      #binding.pry
       click_link product.name, match: :first
+      binding.pry
       expect(page).to have_link product.name, href: product_path(id: product.id)
       #expect(page).to have_current_path product_path(id: product.id)
     end
