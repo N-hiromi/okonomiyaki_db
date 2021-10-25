@@ -1,6 +1,7 @@
 <% anything.comments.each do |comment| %>
   <div class="comment_list">
-    <div class="icon">
+    <div class="comment_icon d-inline-block">
+      <%= render "/layouts/refactoring/no_image", anything: User.find(comment.user_id) %>
     </div>
     <div class="comment_user_name d-inline">
       <%= User.find(comment.user_id).name %>

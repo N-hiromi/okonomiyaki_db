@@ -1,10 +1,11 @@
 <h2><%= @discuss.title %></h2>
 <div class="discuss_text">
   <div class="comment_list">
-    <div class="icon">
+    <div class="comment_icon d-inline-block">
+      <%= render "/layouts/refactoring/no_image", anything: @user %>
     </div>
     <div class="comment_user_name d-inline">
-      <%= User.find(@discuss.user_to_id).name %>
+      <%= @user.name %>
     </div>
     <div class="create d-inline-block ms-2">
       <%= @discuss.created_at.strftime('%Y/%m/%d') %>

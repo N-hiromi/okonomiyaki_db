@@ -149,8 +149,6 @@ ActiveRecord::Schema.define(version: 2021_10_04_075526) do
     t.string "name"
     t.integer "price"
     t.float "cost"
-    t.integer "product_material_id"
-    t.integer "product_technique_id"
     t.text "description"
     t.integer "user_id"
     t.integer "smell"

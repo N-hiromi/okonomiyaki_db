@@ -2,6 +2,7 @@ class DiscussesController < ApplicationController
   before_action :autheniticate_user
   def show
     @discuss = Discuss.find(params[:id])
+    @user = User.find(@discuss.user_from_id)
   end
 
   def new
