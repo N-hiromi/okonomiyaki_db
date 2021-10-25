@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     if @q.blank?
       @products = Product.all
     end
-    @count= @products.count
+    @count = @products.count
   end
 
   def show
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   def new
     @product = current_user.products.new
   end
-  
+
   def create
     @product = current_user.products.new(product_params)
     if @product.save
@@ -29,11 +29,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product= Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def update
-    @product= Product.find(params[:id])
+    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
@@ -44,15 +44,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product= Product.find(params[:id]).destroy
+    @product = Product.find(params[:id]).destroy
     redirect_to account_path
     flash[:notice] = "情報を削除しました"
   end
 
   private
+
   def product_params
     params.require(:product).permit(:name, :price, :cost, :product_material_id, :description, :image, :smell, :taste, :juicy, :app, :bake_id, :cut_id, :other_technique_id, :powder_id, :liquid_id, :other_material_id, :seasoning_id, :powder_weight, :liquid_weight, :seasoning_weight, :other_material_weight).merge(user_id: current_user.id)
   end
 end
-
-

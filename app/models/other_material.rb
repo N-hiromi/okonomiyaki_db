@@ -7,11 +7,11 @@ class OtherMaterial < ApplicationRecord
   validates :cost, presence: true
   validates :warning, presence: true
 
-  def self.ransackable_attributes(auth_object = nil)
-    %w[name cost]
+  def self.ransackable_attributes(auth_object = nil) # rubocop:disable Airbnb/OptArgParameters
+    %w(name cost)
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(auth_object = nil) # rubocop:disable Airbnb/OptArgParameters
     []
   end
 end

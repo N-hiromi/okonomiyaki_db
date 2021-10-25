@@ -7,10 +7,6 @@
       <tbody>
         <%= render "/layouts/common_technique_show_tbody", technique: @cut %>
         <tr>
-          <th scope="col"><%= Constants::WARNING %></th>
-          <td><%= @cut.warning %></td>
-        </tr>
-        <tr>
           <th scope="col"><%= Constants::WIDTH %></th>
           <td><%= @cut.width %>mm</td>
         </tr>

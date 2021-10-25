@@ -6,7 +6,7 @@ class CutsController < ApplicationController
     if @q.blank?
       @techniques = Cut.all
     end
-    @count= @techniques.count
+    @count = @techniques.count
   end
 
   def show
@@ -14,16 +14,16 @@ class CutsController < ApplicationController
   end
 
   def new
-    @technique_category= TechniqueCategory.find(params[:technique_category_id])
+    @technique_category = TechniqueCategory.find(params[:technique_category_id])
     @cut = @technique_category.cuts.new
   end
 
   def create
-    @technique_category= TechniqueCategory.find(params[:technique_category_id])
+    @technique_category = TechniqueCategory.find(params[:technique_category_id])
     @cut = @technique_category.cuts.new(cut_params)
     if @cut.save!
-        flash[:notice] = "材料を登録しました"
-        redirect_to tops_path
+      flash[:notice] = "工法を登録しました"
+      redirect_to tops_path
     else
       flash[:notice] = "登録失敗"
       render action: :new
@@ -31,11 +31,11 @@ class CutsController < ApplicationController
   end
 
   def edit
-    @cut= Cut.find(params[:id])
+    @cut = Cut.find(params[:id])
   end
 
   def update
-    @cut= Cut.find(params[:id])
+    @cut = Cut.find(params[:id])
     if @cut.update(cut_params)
       redirect_to tops_path
       flash[:notice] = "情報を更新しました"
@@ -44,16 +44,16 @@ class CutsController < ApplicationController
       render action: :edit
     end
   end
-  
+
   def destroy
-    @cut= Cut.find(params[:id]).destroy
+    @cut = Cut.find(params[:id]).destroy
     redirect_to account_path
     flash[:notice] = "情報を削除しました"
   end
 
   private
+
   def cut_params
     params.require(:cut).permit(:name, :cost, :tool, :description, :image, :warning, :width, :height, :technique_category_id).merge(user_id: current_user.id)
   end
 end
-

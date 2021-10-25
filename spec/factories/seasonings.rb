@@ -3,7 +3,7 @@ FactoryBot.define do
     association :user
     trait :a do
       id { 1 }
-      name { "MyString" }
+      name { "Seasoning1" }
       cost { 10 }
       description { "MyText" }
       warning { "MyText" }
@@ -13,12 +13,23 @@ FactoryBot.define do
 
     trait :b do
       id { 2 }
-      name { "MyString" }
+      name { "Seasoning2" }
       cost { 10 }
       description { "MyText" }
       warning { "MyText" }
       material_category_id { 3 }
       user_id { 2 }
     end
+  end
+
+  factory :category_seasoning, class: Seasoning do
+    association :material_category
+    id { 2 }
+      name { "Seasoning3" }
+      cost { 10 }
+      description { "MyText" }
+      warning { "MyText" }
+      material_category_id { 3 }
+      user_id { 2 }
   end
 end

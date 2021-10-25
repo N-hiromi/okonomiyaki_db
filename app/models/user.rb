@@ -14,11 +14,11 @@ class User < ApplicationRecord
   has_many :discusses
   has_many :comments
   has_one_attached :image
-  def self.ransackable_attributes(auth_object = nil)
-    %w[name department]
+  def self.ransackable_attributes(auth_object = nil) # rubocop:disable Airbnb/OptArgParameters
+    %w(name department)
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(auth_object = nil) # rubocop:disable Airbnb/OptArgParameters
     []
   end
 end

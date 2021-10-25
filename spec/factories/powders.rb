@@ -27,4 +27,18 @@ FactoryBot.define do
       user_id { 2 }
     end
   end
+
+  factory :category_powder, class: Powder do
+    association :material_category
+    id { 3 }
+    name { "Powder3" }
+    cost { 10 }
+    description { "MyText" }
+    warning { "MyText" }
+    particle_size { 1.5 }
+    density { 1.5 }
+    ssa { 1.5 }
+    material_category_id { 1 }
+    user_id { 2 }
+  end
 end

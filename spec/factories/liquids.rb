@@ -3,7 +3,7 @@ FactoryBot.define do
     association :user
     trait :a do
       id { 1 }
-      name { "MyString" }
+      name { "Liquid1" }
       cost { 10 }
       description { "MyText" }
       warning { "MyString" }
@@ -15,7 +15,7 @@ FactoryBot.define do
 
     trait :b do
       id { 2 }
-      name { "MyString" }
+      name { "Liquid2" }
       cost { 10 }
       description { "MyText" }
       warning { "MyString" }
@@ -24,5 +24,18 @@ FactoryBot.define do
       material_category_id { 2 }
       user_id { 2 }
     end
+  end
+
+  factory :category_liquid, class: Liquid do
+    association :material_category
+    id { 3 }
+      name { "Liquid3" }
+      cost { 10 }
+      description { "MyText" }
+      warning { "MyString" }
+      viscosity { 1.5 }
+      density { 1.5 }
+      material_category_id { 2 }
+      user_id { 2 }
   end
 end

@@ -3,7 +3,7 @@ FactoryBot.define do
     association :user
     trait :a do
       id { 1 }
-      name { "MyString" }
+      name { "Bake1" }
       tool { "MyString" }
       cost { 10 }
       description { "MyText" }
@@ -16,7 +16,7 @@ FactoryBot.define do
 
     trait :b do
       id { 2 }
-      name { "MyString" }
+      name { "Bake2" }
       tool { "MyString" }
       cost { 10 }
       description { "MyText" }
@@ -26,5 +26,19 @@ FactoryBot.define do
       technique_category_id { 1 }
       user_id { 2 }
     end
+  end
+
+  factory :category_bake, class: Bake do
+    association :technique_category
+    id { 3 }
+    name { "Bake3" }
+    tool { "MyString" }
+    cost { 10 }
+    description { "MyText" }
+    warning { "MyText" }
+    temp { 1.5 }
+    time { 1.5 }
+    technique_category_id { 1 }
+    user_id { 2 }
   end
 end

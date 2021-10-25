@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :discuss do
-    title { "MyString" }
-    text { "MyString" }
+    association :user
+    title { "Title" }
+    text { "Text" }
     tag { "MyString" }
   end
 end
