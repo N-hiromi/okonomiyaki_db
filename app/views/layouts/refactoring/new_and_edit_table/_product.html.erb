@@ -35,6 +35,10 @@
             <td><%= f.text_field :smell, autofocus: true, class: "form-control" %></td>
           </tr>
           <tr>
+            <th scope="row">特徴</th>
+            <td><%= f.text_area :description, autofocus: true, class: "form-control" %></td>
+          </tr>
+          <tr>
             <th>焼き方</th>
             <td><%= f.collection_select :bake_id, Bake.all, :id, :name, {prompt: "焼き方を選択"}, {class: "form-control"} %></td>
           </tr>
