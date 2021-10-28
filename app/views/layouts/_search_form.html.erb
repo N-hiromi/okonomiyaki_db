@@ -5,11 +5,15 @@
       <p><%= Constants::NAME %></p>
       <%= f.search_field :name_cont, class:"form-inline" %>
     </div>
+    <div class="form_name">
+      <p><%= "登録者" %></p>
+      <%= f.select :user_id_eq, options_from_collection_for_select(User.all, :id, :name), class:"form-inline" %>
+    </div>
     <div class="form_cost">
       <p><%= Constants::COST %></p>
-      <%= f.search_field :cost_gteq, placeholder:"以上", size:5, class:"form-inline me-1" %>
+      <%= f.search_field :cost_gteq, placeholder:"以上", size:5, class:"form-inline me-1" %>円
       〜
-      <%= f.search_field :cost_lteq, placeholder:"以下", size:5, class:"form-inline ms-1" %>
+      <%= f.search_field :cost_lteq, placeholder:"以下", size:5, class:"form-inline ms-1" %>円
     </div>
     <%= f.submit "検索", class: "btn btn-primary submit" %>
   </div>
