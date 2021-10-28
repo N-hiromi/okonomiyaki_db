@@ -1,7 +1,7 @@
-<%= render "/layouts/search_form", url: technique_category_other_techniques_path, q: @q %>
-<%= render "/layouts/technique_blank" %>
+<%= render "/layouts/refactoring/search_form", url: technique_category_other_techniques_path, q: @q %>
+<%= render "/layouts/refactoring/technique_blank" %>
 <table class="table<%= ' no_data_table' if @techniques.blank? %>">
-  <%= render '/layouts/show_thead' %>
+  <%= render '/layouts/refactoring/show_thead' %>
   <tbody>
     <% @techniques.each_with_index do |technique, index| %>
       <tr>

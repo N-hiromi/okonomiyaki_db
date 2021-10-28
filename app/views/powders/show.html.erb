@@ -5,7 +5,7 @@
   <div class="user_material_table">
     <table class="table">
       <tbody>
-        <%= render "/layouts/common_material_show_tbody", material: @powder %>
+        <%= render "/layouts/refactoring/common_material_show_tbody", material: @powder %>
         <tr>
           <th scope="col"><%= Constants::PARTICLE_SIZE %></th>
           <td><%= @powder.particle_size %>nm</td>

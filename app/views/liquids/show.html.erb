@@ -5,7 +5,7 @@
   <div class="user_material_table">
     <table class="table">
       <tbody>
-        <%= render "/layouts/common_material_show_tbody", material: @liquid %>
+        <%= render "/layouts/refactoring/common_material_show_tbody", material: @liquid %>
         <tr>
           <th scope="col"><%= Constants::DENSITY %></th>
           <td><%= @liquid.density %>g/cm3</td>

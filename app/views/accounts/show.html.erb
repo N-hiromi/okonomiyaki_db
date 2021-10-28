@@ -35,7 +35,7 @@
     登録した製品はありません
   <% end %>
   <table class="table<%= ' no_data_table' if @products.blank? %>">
-    <%= render "/layouts/show_product_thead" %>
+    <%= render "/layouts/refactoring/show_product_thead" %>
     <tbody>
 <% @products.each_with_index do |product, index|%>
       <tr>
@@ -57,7 +57,7 @@
   登録した材料はありません
   <% end %>
   <table class="table<%= ' no_data_table' if @powders.blank? and @liquids.blank? and @seasonings.blank? and @other_materials.blank? %>">
-    <%= render "/layouts/show_thead" %>
+    <%= render "/layouts/refactoring/show_thead" %>
     <tbody>
     <% @powders.each_with_index do |powder, index| %>
       <tr>
@@ -109,7 +109,7 @@
   登録した工法はありません
   <% end %>
   <table class="table<%= " no_data_table" if @bakes.blank? and @cuts.blank? and @other_techniques.blank? %>">
-    <%= render "/layouts/show_thead" %>
+    <%= render "/layouts/refactoring/show_thead" %>
     <tbody>
       <% @bakes.each_with_index do |bake, index| %>
         <tr>

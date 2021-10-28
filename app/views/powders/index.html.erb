@@ -1,7 +1,7 @@
-<%= render "/layouts/search_form", url: material_category_powders_path, q: @q %>
-<%= render "/layouts/material_blank" %>
+<%= render "/layouts/refactoring/search_form", url: material_category_powders_path, q: @q %>
+<%= render "/layouts/refactoring/material_blank" %>
 <table class="table<%= ' no_data_table' if @materials.blank? %>">
-  <%= render '/layouts/show_thead' %>
+  <%= render '/layouts/refactoring/show_thead' %>
   <tbody>
     <% @materials.each_with_index do |material, index| %>
       <tr>

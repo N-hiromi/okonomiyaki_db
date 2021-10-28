@@ -5,7 +5,7 @@
   <div class="user_technique_table">
     <table class="table">
       <tbody>
-        <%= render "/layouts/common_technique_show_tbody", technique: @other_technique %>
+        <%= render "/layouts/refactoring/common_technique_show_tbody", technique: @other_technique %>
         <tr>
           <th scope="col"><%= Constants::TIME %></th>
           <td><%= @other_technique.time %>h</td>

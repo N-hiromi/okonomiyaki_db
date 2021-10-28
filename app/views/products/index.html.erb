@@ -1,9 +1,9 @@
-<%= render "/layouts/search_form", url: products_path, q: @q %>
+<%= render "/layouts/refactoring/search_form_product", url: products_path, q: @q %>
 <% if @products.blank? %>
   検索結果なし
 <% end %>
 <table class="table<%= ' no_data_table' if @products.blank? %>">
-  <%= render '/layouts/show_thead' %>
+  <%= render '/layouts/refactoring/show_thead' %>
   <tbody>
     <% @products.each_with_index do |product, index| %>
       <tr>
