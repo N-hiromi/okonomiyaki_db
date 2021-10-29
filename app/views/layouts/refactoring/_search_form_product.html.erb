@@ -3,11 +3,7 @@
   <div class="form_container">
     <div class="form_name">
       <p><%= Constants::NAME %></p>
-      <%= f.search_field :name_cont, class:"form-inline" %>
-    </div>
-    <div class="form_name">
-      <p><%= "登録者" %></p>
-      <%= f.select :user_id_eq, options_from_collection_for_select(User.all, :id, :name), class:"form-inline" %>
+      <%= f.search_field :name_cont %>
     </div>
     <div class="form_cost">
       <p><%= Constants::COST %></p>
@@ -15,20 +11,24 @@
       〜
       <%= f.search_field :cost_lteq, placeholder:"以下", size:5, class:"form-inline ms-1" %>円
     </div>
+    <div class="form_user_name">
+      <p><%= "登録者" %></p>
+      <%= f.select :user_id_eq, options_from_collection_for_select(User.all, :id, :name) %>
+    </div>
     <div class="form_material">
       <p><%= "材料" %></p>
-      <%= f.select :powder_id_eq, options_from_collection_for_select(Powder.all, :id, :name), class:"form-control" %>
-      <%= f.select :liquid_id_eq, options_from_collection_for_select(Liquid.all, :id, :name), class:"form-control" %>
-      <%= f.select :seasoning_id_eq, options_from_collection_for_select(Seasoning.all, :id, :name), class:"form-control" %>
-      <%= f.select :other_material_id_eq, options_from_collection_for_select(OtherMaterial.all, :id, :name), class:"form-control" %>
+      <%= f.select :powder_id_eq, options_from_collection_for_select(Powder.all, :id, :name), {}, class:"d-block" %>
+      <%= f.select :liquid_id_eq, options_from_collection_for_select(Liquid.all, :id, :name), {}, class:"d-block" %>
+      <%= f.select :seasoning_id_eq, options_from_collection_for_select(Seasoning.all, :id, :name), {}, class:"d-block" %>
+      <%= f.select :other_material_id_eq, options_from_collection_for_select(OtherMaterial.all, :id, :name), {}, class:"d-block" %>
     </div>
     <div class="form_technique">
     <p><%= "工法" %></p>
-      <%= f.select :bake_id_eq, options_from_collection_for_select(Cut.all, :id, :name), class:"form-control" %>
-      <%= f.select :cut_id_eq, options_from_collection_for_select(Bake.all, :id, :name), class:"form-control" %>
-      <%= f.select :other_technique_id_eq, options_from_collection_for_select(OtherTechique.all, :id, :name), class:"form-control" %>
+      <%= f.select :bake_id_eq, options_from_collection_for_select(Cut.all, :id, :name), {}, class:"d-block" %>
+      <%= f.select :cut_id_eq, options_from_collection_for_select(Bake.all, :id, :name), {}, class:"d-block" %>
+      <%= f.select :other_technique_id_eq, options_from_collection_for_select(OtherTechnique.all, :id, :name), {}, class:"d-block" %>
     </div>
-    <%= f.submit "検索", class: "btn btn-primary submit" %>
+    <%= f.submit "検索", class: "btn btn-primary submit product_form_submit" %>
   </div>
 <% end %>
 <h2>検索結果：<%=@count %>件</h2>

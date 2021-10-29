@@ -20,7 +20,7 @@ class Product < ApplicationRecord
   validates :other_material_id, presence: true
 
   def self.ransackable_attributes(auth_object = nil) # rubocop:disable Airbnb/OptArgParameters
-    %w(name cost user_id)
+    %w(name cost user_id powder_id liquid_id seasoning_id other_material_id bake_id cut_id other_technique_id)
   end
 
   def self.ransackable_associations(auth_object = nil) # rubocop:disable Airbnb/OptArgParameters

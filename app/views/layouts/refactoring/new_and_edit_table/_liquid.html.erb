@@ -1,7 +1,7 @@
 <h2 class="mb-4">液体材料登録</h2>
   <table class="table">  
     <tbody>
-      <%= render "/layouts/common_material_form", f: f %>
+      <%= render "/layouts/refactoring/common_material_form", f: f %>
       <tr>
           <th scope="row"><%= Constants::DENSITY %></th>
           <td><%= f.text_field :density, autofocus: true, class: "form-control" %></td>

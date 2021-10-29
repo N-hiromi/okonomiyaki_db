@@ -67,7 +67,7 @@ html{
     }
     
     .form_container{
-      margin:0 15%;
+      //margin:0 10%;
       display:flex;
       justify-content: space-around;
     }
@@ -75,9 +75,15 @@ html{
       margin-bottom:0;
       text-align: left;
     }
+    .block{
+      display:block;
+    }
     .submit{
       height: 36px;
       margin-top:20px;
+    }
+    .product_form_submit{
+      margin-top:80px;
     }
   }
 }
