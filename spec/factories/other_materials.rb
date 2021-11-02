@@ -11,7 +11,8 @@ FactoryBot.define do
       user_id { 1 }
     end
 
-    trait :b do
+    factory :product_other_material, class: OtherMaterial do
+      association :product
       id { 2 }
       name { "Other_material2" }
       cost { 10 }

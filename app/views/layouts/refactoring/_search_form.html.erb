@@ -7,7 +7,7 @@
     </div>
     <div class="form_name">
       <p><%= "登録者" %></p>
-      <%= f.select :user_id_eq, options_from_collection_for_select(User.all, :id, :name), class:"form-inline" %>
+      <%= f.select :user_id_eq, options_from_collection_for_select(User.all, :id, :name), prompt: "登録者を選択", class:"form-inline" %>
     </div>
     <div class="form_cost">
       <p><%= Constants::COST %></p>

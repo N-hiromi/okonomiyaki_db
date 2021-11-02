@@ -14,7 +14,8 @@ FactoryBot.define do
       user_id { 1 }
     end
 
-    trait :b do
+    factory :product_bake, class: Bake do
+      association :product
       id { 2 }
       name { "Bake2" }
       tool { "MyString" }

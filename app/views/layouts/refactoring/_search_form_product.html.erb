@@ -13,20 +13,20 @@
     </div>
     <div class="form_user_name">
       <p><%= "登録者" %></p>
-      <%= f.select :user_id_eq, options_from_collection_for_select(User.all, :id, :name) %>
+      <%= f.select :user_id_eq, options_from_collection_for_select(User.all, :id, :name), prompt: "登録者を選択" %>
     </div>
     <div class="form_material">
       <p><%= "材料" %></p>
-      <%= f.select :powder_id_eq, options_from_collection_for_select(Powder.all, :id, :name), {}, class:"d-block" %>
-      <%= f.select :liquid_id_eq, options_from_collection_for_select(Liquid.all, :id, :name), {}, class:"d-block" %>
-      <%= f.select :seasoning_id_eq, options_from_collection_for_select(Seasoning.all, :id, :name), {}, class:"d-block" %>
-      <%= f.select :other_material_id_eq, options_from_collection_for_select(OtherMaterial.all, :id, :name), {}, class:"d-block" %>
+      <%= f.select :powder_id_eq, options_from_collection_for_select(Powder.all, :id, :name), {prompt: "粉末材料を選択"}, class:"d-block" %>
+      <%= f.select :liquid_id_eq, options_from_collection_for_select(Liquid.all, :id, :name), {prompt: "液体材料を選択"}, class:"d-block" %>
+      <%= f.select :seasoning_id_eq, options_from_collection_for_select(Seasoning.all, :id, :name), {prompt: "調味料を選択"}, class:"d-block" %>
+      <%= f.select :other_material_id_eq, options_from_collection_for_select(OtherMaterial.all, :id, :name), {prompt: "その他材料を選択"}, class:"d-block" %>
     </div>
     <div class="form_technique">
     <p><%= "工法" %></p>
-      <%= f.select :bake_id_eq, options_from_collection_for_select(Cut.all, :id, :name), {}, class:"d-block" %>
-      <%= f.select :cut_id_eq, options_from_collection_for_select(Bake.all, :id, :name), {}, class:"d-block" %>
-      <%= f.select :other_technique_id_eq, options_from_collection_for_select(OtherTechnique.all, :id, :name), {}, class:"d-block" %>
+      <%= f.select :bake_id_eq, options_from_collection_for_select(Bake.all, :id, :name), {prompt: "焼き方を選択"}, class:"d-block" %>
+      <%= f.select :cut_id_eq, options_from_collection_for_select(Cut.all, :id, :name), {prompt: "切り方を選択"}, class:"d-block" %>
+      <%= f.select :other_technique_id_eq, options_from_collection_for_select(OtherTechnique.all, :id, :name), {prompt: "その他工法を選択"}, class:"d-block" %>
     </div>
     <%= f.submit "検索", class: "btn btn-primary submit product_form_submit" %>
   </div>

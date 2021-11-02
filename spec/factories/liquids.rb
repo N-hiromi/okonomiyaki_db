@@ -13,7 +13,8 @@ FactoryBot.define do
       user_id { 1 }
     end
 
-    trait :b do
+    factory :product_liquid, class: Liquid do
+      association :product
       id { 2 }
       name { "Liquid2" }
       cost { 10 }

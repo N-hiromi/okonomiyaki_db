@@ -14,7 +14,8 @@ FactoryBot.define do
       user_id { 1 }
     end
 
-    trait :b do
+    factory :product_cut, class: Cut do
+      association :product
       id { 2 }
       name { "Cut2" }
       tool { "MyString" }

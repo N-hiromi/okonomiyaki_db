@@ -9,7 +9,7 @@ RSpec.feature "accounts/show.html.erb", type: :feature do
     let!(:liquid) { create(:liquid, :a, user: user) }
     let!(:seasoning) { create(:seasoning, :a, user: user) }
     let!(:other_material) { create(:other_material, :a, user: user) }
-    let!(:product) { create(:product, :a, bake_id: bake.id, user: user) }
+    let!(:product) { create(:product, bake_id: bake.id, user: user) }
 
     before do
       sign_in user

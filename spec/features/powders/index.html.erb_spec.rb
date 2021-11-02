@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "powders/index.html.erb", type: :feature do
+  include SearchSupport
   feature "indexについてテスト" do
     let!(:user) { create(:user) }
     let!(:material_category) { create(:material_category) }
@@ -16,6 +17,12 @@ RSpec.describe "powders/index.html.erb", type: :feature do
       expect(page).to have_content powder.cost
       expect(page).to have_content powder.created_at.strftime('%Y/%m/%d')
       expect(page).to have_content powder.updated_at.strftime('%Y/%m/%d')
+    end
+
+    scenario 'can be searched powders for name, cost, and user_id' do
+      search_name("Powder3", powder)
+      search_cost(9, 11, powder)
+      search_no_user_id("テスト1", powder)
     end
 
     scenario 'have link to powders#show' do

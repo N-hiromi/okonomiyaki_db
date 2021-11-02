@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "other_techniques/index.html.erb", type: :feature do
+  include SearchSupport
   feature "indexについてテスト" do
     let!(:user) { create(:user) }
     let!(:technique_category) { create(:technique_category) }
@@ -16,6 +17,12 @@ RSpec.describe "other_techniques/index.html.erb", type: :feature do
       expect(page).to have_content other_technique.cost
       expect(page).to have_content other_technique.created_at.strftime('%Y/%m/%d')
       expect(page).to have_content other_technique.updated_at.strftime('%Y/%m/%d')
+    end
+
+    scenario 'can be searched other_techniques for name, cost, and user_id' do
+      search_name("Other_technique3", other_technique)
+      search_cost(9, 11, other_technique)
+      search_no_user_id("テスト1", other_technique)
     end
 
     scenario 'have link to other_techniques#show' do

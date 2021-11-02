@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "bakes/index.html.erb", type: :feature do
+  include SearchSupport
   feature "indexについてテスト" do
     let!(:user) { create(:user) }
     let!(:technique_category) { create(:technique_category) }
@@ -18,20 +19,15 @@ RSpec.describe "bakes/index.html.erb", type: :feature do
       expect(page).to have_content bake.updated_at.strftime('%Y/%m/%d')
     end
 
-    scenario 'can be searched bakes for name' do
-      #fill_in "bake_name", with: "Bake_name"
-      fill_in 'q[name_cont]', with: "Bake3"
-      find('input[name="commit"]').click
-      #binding.pry
-      #expect(page).to have_content bake.name
-      expect(page).to have_content "検索結果なし"
+    scenario 'can be searched bakes for name, cost, and user_id' do
+      search_name("Bake3", bake)
+      search_cost(9, 11, bake)
+      search_no_user_id("テスト1", bake)
     end
 
     scenario 'have link to bakes#show' do
       click_link bake.name, match: :first
       expect(page).to have_current_path bake_path(id: bake.id)
     end
-
-
   end
 end

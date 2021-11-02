@@ -14,7 +14,8 @@ FactoryBot.define do
       user_id { 1 }
     end
 
-    trait :b do
+    factory :product_powder, class: Powder do
+      association :product_anything
       id { 2 }
       name { "Powder2" }
       cost { 10 }
@@ -25,6 +26,7 @@ FactoryBot.define do
       ssa { 1.5 }
       material_category_id { 1 }
       user_id { 2 }
+      product_id { 2 }
     end
   end
 
